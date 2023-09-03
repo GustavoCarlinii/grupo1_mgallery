@@ -1,4 +1,6 @@
 **Presentacion del proyecto y paginas referidas**
+
+
 El comercio electrónico es una tendencia creciente en el mundo actual. Cada vez más personas compran bienes y servicios en internet, ya que esto ofrece una mayor comodidad y flexibilidad. El arte no es la excepción, y este canal permite acceder a un público más amplio, una gran variedad de obras.
 
 Las galerías desempeñan un papel importante en el mercado del arte, ya que además de brindar un espacio dedicado a la exhibición y divulgación, permiten conectar a los artistas con posibles compradores.
