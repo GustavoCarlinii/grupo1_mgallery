@@ -14,7 +14,15 @@ body{
 article img{
     width: 50px;
 }
+.icon-menu{
+    display:flex;
+    text-align: justify;
+}
 
+
+
+
+/* Tablet */
 @media (min-width:361px) {
     .nav-carro{
         display: block;
