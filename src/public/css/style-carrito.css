@@ -1,3 +1,37 @@
+body{
+    font-family: 'Roboto';
+}
+.main-header{
+    display: flex;
+    justify-content:space-around ;
+}
+.main-header .top-header img{
+    width: 40%;
+}
+.nav-carro{
+    display: none;
+}
 article img{
     width: 50px;
+}
+.icon-menu{
+    display:flex;
+    text-align: justify;
+}
+
+
+
+
+/* Tablet */
+@media (min-width:361px) {
+    .nav-carro{
+        display: block;
+    }
+    .nav-carro ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav-carro ul li {
+        display: flex;
+    }
 }
