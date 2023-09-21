@@ -139,7 +139,7 @@ margin: auto;
     display: flex;
     position: absolute;
     flex-direction: column;
-    gap: 10%;
+    gap: 6px;
     top: -19px;
     width: 90%;
     height: 70%;
@@ -159,5 +159,21 @@ margin: auto;
 #conteiner-buttom{
 position: flex;
 margin-top: 100px;
+transform: translate(17%,20%);
 
+}
+
+@media (min-width:425px ){
+    #conteiner-secundary-article{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    #conteiner-main-article{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        top: -59px;
+        left: 30%
+    }
 }
