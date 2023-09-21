@@ -84,7 +84,7 @@ article img{
 .boton-carrito{
     display: flex;
     justify-content: center; 
-    padding-bottom: 20px;   
+    padding-bottom: 20px;
 }
 .boton-carrito button{
     background-color: black;
@@ -93,6 +93,10 @@ article img{
     border: 1px solid aliceblue;
     border-radius: 5px;
     box-shadow:  3px 1px 1px black;
+    margin: 10px;
+}
+.title-register{
+    text-align: justify;
 }
 .footer-carrito{
     background-color: #363636;
