@@ -134,6 +134,7 @@ article img{
     .main-header{
         position: fixed;
         top: 0;
+        z-index: 100;
     }
     .nav-carro{
         display: flex;
