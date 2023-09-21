@@ -129,6 +129,7 @@ article img{
 @media (min-width:767px) {
     .main-header{
         position: fixed;
+        top: 0;
     }
     .nav-carro{
         display: flex;
