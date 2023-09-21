@@ -13,7 +13,8 @@ body {
 }
 
 .form-container input[type="text"],
-.form-container input[type="password"] {
+.form-container input[type="password"],
+.form-container input[type="email"] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
