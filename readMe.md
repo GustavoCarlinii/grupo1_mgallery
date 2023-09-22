@@ -44,3 +44,6 @@ Soy Aurora Müller, tengo un background sólido en diseño y actualmente estoy t
 
 
 Mi nombre es Divo Mustafa Ragu Tengo 30 años. Desde hace años estoy interesado en el area informatica y de desarrollo. Tengo conocimientos en HTML, CSS3 y SASS. Quiero reforzar mi conocimientos y poder aprender mas en el area de programacion Front-End.
+
+#### Tablero de trabajo Trello Sprint 2
+https://trello.com/b/JEvr5ID2/g1-muller-gallery
