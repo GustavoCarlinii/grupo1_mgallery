@@ -4,6 +4,11 @@
     font-family: 'Roboto';
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+}
+
 /* titulo obras */
 .titulo {
 display: flex;
@@ -11,6 +16,7 @@ justify-content: center;
 margin: -5px;
 padding-top: 4%;
 }
+
 
 
 .nombre-pintura {
@@ -27,14 +33,7 @@ padding-top: 4%;
 }
 
 /* modificar la imagen  */
-#conteiner{
-    position: relative;
-    height: 334px;
-    width: 500px;
-    top: 32px;
-  
 
-}
 
 
 #image-principal {
@@ -44,27 +43,25 @@ padding-top: 4%;
 }
 
 #conteiner-image-principal {
-    position: absolute;
-    top: 29%;
-    left: 50%;
-    transform: translate(-70%, -48%);
-    right: -17%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
 }
 
 
 #conteiner-secundary {
-    position: absolute;
+
     display: flex;
-    flex-direction: column;
+    
     gap: 9px;
     height: 100%;
-    left: 64%;
-    top: 15%;
+justify-content: center;
 }
 
 #image-secondary {
     width: 92px;
     height: 100px;
+
 }
 
 #conteiner-image-principal,
@@ -119,12 +116,12 @@ margin: auto;
 /* price and status accommodation */
 
 #main-article{
-    position: relative;
+
 }
 
 #conteiner-main-article{
     display: flex;
-    position: absolute;
+
     left: 15%;
     top: 45px;
 }
@@ -135,7 +132,7 @@ margin: auto;
 
 #conteiner-secundary-article{
     display: flex;
-    position: absolute;
+    
     flex-direction: column;
     gap: 5px;
     top: 14px;
@@ -147,7 +144,7 @@ margin: auto;
 #status{
     display: flex;
     padding: 2px;
-    display: flex;
+    
     margin: 1px;
     content: 50%;
     width: 50%;
@@ -155,10 +152,15 @@ margin: auto;
 
 
 #conteiner-buttom{
-position: flex;
-margin-top: 100px;
-transform: translate(17%,20%);
 
+margin-top: 100px;
+
+
+}
+
+@media(max-width:425px){
+    #image-secondary {
+        display: none;
 }
 
 @media (min-width:426px ){
@@ -180,8 +182,7 @@ transform: translate(17%,20%);
     display: flex;
     top:-20px;
     left: 24%;
-
-    }
+}
 
 .buttom1{
     display: flex;
@@ -189,7 +190,7 @@ transform: translate(17%,20%);
 
 }
 .buttom2{
-    display: flex;
+    
     display: flex;
     top: -10px;
     left: 30%;
@@ -201,6 +202,7 @@ transform: translate(17%,20%);
     display: flex;
     right: 700px;
     width: 500px;
-    transform: translate(120px, -60px);
+ 
+  
 }
 }
