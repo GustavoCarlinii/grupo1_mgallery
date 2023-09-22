@@ -114,11 +114,6 @@ margin: auto;
 }
 
 /* price and status accommodation */
-
-#main-article{
-
-}
-
 #conteiner-main-article{
     display: flex;
 
@@ -162,6 +157,7 @@ margin-top: 100px;
     #image-secondary {
         display: none;
 }
+}
 
 @media (min-width:426px ){
     #conteiner-secundary-article{
@@ -202,7 +198,5 @@ margin-top: 100px;
     display: flex;
     right: 700px;
     width: 500px;
- 
-  
 }
 }
