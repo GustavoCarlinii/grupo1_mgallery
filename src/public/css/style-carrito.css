@@ -100,6 +100,21 @@ article img{
     background-color: #363636;
     padding: 5px;
     color: #fff;
+    font-size: 12px;
+}
+.icon-links{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    right: 5px;
+    bottom: 35px;
+}
+.icon-links a{
+    padding: 3px;
+}
+.icon-links h2{
+    padding: 0;
+    margin: 0;
 }
 .fa-instagram, .fa-facebook-square, .fa-twitter, .fa-pinterest{
     color: #fff;
@@ -126,6 +141,17 @@ article img{
     }
     .boton-carrito button{
         cursor: pointer;
+}
+.icon-links{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    right: 17px;
+    bottom: 40px;
+}
+.icon-links a{
+    padding: 3px;
+}
 }
 /* Desktop */
 @media (min-width:767px) {
@@ -186,5 +212,4 @@ article img{
         font-size: 20px;
         font-weight: 900;
     }
-}
 }
