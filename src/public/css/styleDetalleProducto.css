@@ -143,9 +143,7 @@ button {
 
 @media (min-width:425px) {
     
-.nombre-pintura {
-    
-}
+
 
     #conteiner {
         display: flex;
