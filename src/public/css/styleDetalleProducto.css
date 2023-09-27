@@ -109,6 +109,10 @@ button {
 
 #conteiner-main-article {
     width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #main-article {
@@ -141,7 +145,7 @@ button {
     display: none;
 }
 
-@media (min-width:425px) {
+@media (min-width:426px) {
     
 
 
