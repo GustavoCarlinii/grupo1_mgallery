@@ -97,10 +97,6 @@ button {
 
 #conteiner-main-article {
     width: 40%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
 }
 
 #main-article {
@@ -136,7 +132,14 @@ button {
     display: none;
 }
 
+<<<<<<< HEAD
 @media (min-width: 426px) {
+=======
+@media (min-width:425px) {
+    
+
+
+>>>>>>> parent of b39f50a (arreglos)
     #conteiner {
         display: flex;
         align-items: start;

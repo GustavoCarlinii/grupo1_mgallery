@@ -102,6 +102,13 @@ article img{
     color: #fff;
     font-size: 12px;
 }
+.icon-links{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    right: 5px;
+    bottom: 35px;
+}
 .icon-links a{
     padding: 3px;
 }
@@ -134,6 +141,13 @@ article img{
     }
     .boton-carrito button{
         cursor: pointer;
+}
+.icon-links{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    right: 17px;
+    bottom: 40px;
 }
 .icon-links a{
     padding: 3px;
