@@ -1,12 +1,5 @@
 * {
-    padding: 0px;
-    margin: 0px;
     font-family: 'Roboto';
-}
-
-main {
-    display: flex;
-    flex-direction: column;
 }
 
 /* titulo obras */
@@ -37,23 +30,18 @@ main {
 
 
 #image-principal {
-    width: 90%;
+    width: 100%;
 
 }
 
 #conteiner-image-principal {
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 
-#conteiner-secundary {
-    display: flex;
-    gap: 9px;
-    height: 100%;
-    justify-content: center;
-}
+
 
 #image-secondary {
     width: 92px;
@@ -144,122 +132,47 @@ button {
 #image-secondary {
     display: none;
 }
+.contenedor-titulo{
+    display: none;
+}
 
-@media (min-width:426px) {
-    
-    .nombre-pintura{
-        position: absolute;
-        left: 54%;
-        top: 14%;
-    }
-    
-    
+@media (min-width: 426px) {
     #conteiner {
         display: flex;
         align-items: start;
         flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: row;
+        /* width: 40%; */
+        margin-top: 4%;
+        margin-left: 1%;
+        margin-bottom: 1%;
+        padding: 2%;
     }
-
+    .contenedor-imagenes{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
     #conteiner-image-principal {
-        width: 48%;
+        width: 100%;
     }
 
     #conteiner-secundary {
-        width: 44%;
         display: flex;
-        margin: 2%;
+        width: 100%;
+        justify-content: center;
+        gap: 5%;
     }
 
     #image-secondary {
-        width: 30%;
-        margin: auto;
         display: block;
+        width: 100%;
     }
-
-    #conteiner-secundary-article {
-        /* display: flex;
-        justify-content: end;
-        align-items: center;
-        left: 25% */
-        left: 52%;
-        position: absolute;
-        top: 38%;
-        width: 30%;
-    }
-
-    #conteiner-main-article {
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        /* top: -32px;
-        left: 37%; */
-        top: 35%;
-        left: 17%;
-        position: absolute;
-    }
-
-
-    #conteiner-buttom {
-        /* display: flex;
-        width: 300px;
-        justify-content: space-evenly;
-        margin: auto; */
-        /* display: flex;
-        width: 60%;
-        margin: auto;
-        position: relative;
-        top: -140px;
-        left: 20%; */
-        display: flex;
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        width: 300px;
-    }
-
-
-.buttom1 {
-    display: flex;
-   
-
-}
-
-.buttom2 {
-    display: flex;
-    top: -10px;
-    left: 30%;
-    top: -5px;
-  
-}
-
-.Descripcion2 {
-    width: 46%;
-    display: flex;
-    position: absolute;
-    left: 52%;
-    top: 58%;
-
-}
-
-
-.nombre-pintura2 {
-    position: absolute;
-    left: 52%;
-    bottom: 40%;
-    top: 53%;
-}
-
-.Descripcion{
-
-        position: relative;
-        width: 30%;
-        top: 40px;
-        left: 50%;
-
+    .contenedor-titulo-2{
+        padding-left: 10%;
+        text-align: end;
     }
 }
-
 
 
 
