@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <!-- FONT AWESOME -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="image/logo-favicon.ico">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style-carrito.css">
-    <link rel="stylesheet" href="/css/ingreso.css">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="images/logo-favicon.ico">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../public/css/normalize.css">
+    <link rel="stylesheet" href="../public/css/style-carrito.css">
+    <link rel="stylesheet" href="../public/css/ingreso.css">
+    
     <title>Formulario de ingreso - Müller Gallery</title>
 </head>
 
@@ -22,15 +28,15 @@
     <header class="main-header">
         <!-- logo -->
         <div class=" top-header">
-            <img src="/image/logo.svg" alt="Logo de Müller Gallery" />
+            <img src="../public/images/logo.svg" alt="Logo de Müller Gallery" />
         </div>
         <!-- menu desktop -->
         <nav class="nav-carro">
             <ul>
-                <li><a href="/">home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/detalleProducto">detalleProducto</a></li>
                 <li><a href="/carritoCompras">carritoCompras</a></li>
-                <li><a href="/formIngreso">formIngreso</a></li>
+                <li><a href="./">formIngreso</a></li>
                 <li><a href="/formRegistro">formRegistro</a></li>
             </ul>
         </nav>
@@ -50,7 +56,7 @@
     <main class="main-carrito">
         <form action="">
             <div class="container">
-                <h1>Iniciar sesión</h1>
+                <h1>Iniciá sesión</h1>
                 <div class="form-container">
                     <div>
                         <label for="correo-electrónico">Correo electrónico</label>
@@ -61,11 +67,11 @@
                         <input type="password" name="password" minlength="2" id="pass" required>
                     </div>
                     <div class="boton-carrito">
-                        <button type="submit">Ingresar</button>
+                        <button class="button-ingreso" type="submit">Ingresar</button>
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="ingreso-alternativo">
                 <p>
                     ¿No tenés una cuenta?
                     <a href="/formRegistro">Registrate</a>
@@ -73,6 +79,13 @@
             </div>
             </div>
         </form>
+        <section class="ingreso-invitado">
+            <h2>Continuar como invitado</h2>
+            <button class="ingreso-invitado">
+                Ingresar como invitado
+            </button>
+        </section>
+
     </main>
     <!-- footer -->
     <footer class="footer-carrito">

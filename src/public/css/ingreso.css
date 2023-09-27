@@ -3,13 +3,30 @@ body {
 }
 
 .container {
-    max-width: 400px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
     text-align: center;
 }
 
 .form-container {
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: left;
     padding: 20px;
+}
+
+form .container h1{
+    text-align: left;
+    padding: 0 20px;
+}
+
+.form-container label{
+    font-weight: bold;
 }
 
 .form-container input[type="text"],
@@ -21,18 +38,59 @@ body {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    background-color: #d9d9d9;
 }
-
-.form-container button {
+/* Las etiquetas suman 1 de especificidad, las clases suman 10 y los id suman 100, si algo no me responde, debo comprobar que no sea falta o competencia de especificidad */
+.boton-carrito .button-ingreso {
     background-color: #000;
     color: #fff;
-    padding: 12px 20px;
+    padding: 10px 50px;
     border: none;
-    border-radius: 5px;
+
     cursor: pointer;
+    border-radius: 0;
+    align-self: center;
+
+    margin-top: 25px;
+
+    /* color de la sombra, como se mueve la sombra en el eje X, como se mueve en el eje Y, por último el difuminado de la sombra */
+
 }
 
-@media screen and (min-width: 600px) {
+.boton-carrito .button-ingreso:hover{
+    box-shadow: #00000072 5px 5px 1px;
+    transition: 800ms;
+}
+
+.ingreso-alternativo{
+    padding: 0 20px;
+}
+
+.ingreso-alternativo a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bolder;
+}
+
+.ingreso-invitado{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 40px 20px;
+}
+.ingreso-invitado button{
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+
+    cursor: pointer;
+    border-radius: 0;
+
+    width: fit-content;
+}
+
+
+@media screen and (max-width: 768px) {
     .container {
         width: 90%;
     }

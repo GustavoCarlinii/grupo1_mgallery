@@ -142,6 +142,11 @@ button {
 }
 
 @media (min-width:425px) {
+    
+.nombre-pintura {
+    
+}
+
     #conteiner {
         display: flex;
         align-items: start;
@@ -166,32 +171,50 @@ button {
     }
 
     #conteiner-secundary-article {
-        display: flex;
+        /* display: flex;
         justify-content: end;
         align-items: center;
-        left: 25%
+        left: 25% */
+        left: 52%;
+        position: absolute;
+        top: 38%;
+        width: 30%;
     }
 
     #conteiner-main-article {
         display: flex;
         justify-content: end;
         align-items: center;
-        top: -32px;
-        left: 37%
+        /* top: -32px;
+        left: 37%; */
+        top: 35%;
+        left: 17%;
+        position: absolute;
     }
 
 
     #conteiner-buttom {
-        display: flex;
-        width: 500px;
+        /* display: flex;
+        width: 300px;
         justify-content: space-evenly;
+        margin: auto; */
+        /* display: flex;
+        width: 60%;
         margin: auto;
+        position: relative;
+        top: -140px;
+        left: 20%; */
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
     }
-}
+
 
 .buttom1 {
     display: flex;
-
+   
 
 }
 
@@ -200,4 +223,28 @@ button {
     top: -10px;
     left: 30%;
     top: -5px;
+  
 }
+
+.Descripcion2 {
+    width: 46%;
+    display: flex;
+    position: absolute;
+    left: 52%;
+    top: 62%;
+
+}
+
+
+.nombre-pintura2 {
+    position: absolute;
+    left: 52%;
+    bottom: 40%;
+    top: 58%;
+}
+}
+
+
+
+
+
