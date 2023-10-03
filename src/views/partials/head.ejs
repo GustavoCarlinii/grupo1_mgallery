@@ -9,5 +9,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="images/logo-favicon.ico">
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style-carrito.css">
-        <title>Carrito de compras - Müller Gallery</title>
+        <% locals.styles && styles.forEach(style =>{ %>
+            <link rel="stylesheet" href="css/<%= style%>.css"/>
+        <% }); %>
+
+        <title>Müller Gallery</title>
