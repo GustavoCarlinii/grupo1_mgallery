@@ -3,16 +3,16 @@ const controller = {
         res.render("home")
     },
     carritoCompras(req, res){
-        res.render("carritoCompras")
+        res.render("carritoCompras.ejs")
     },
     detalleProducto(req, res){
-        res.render("detalleProducto")
+        res.render("detalleProducto.ejs")
     },
     formIngreso(req, res){
-        res.render("formIngreso")
+        res.render("formIngreso.ejs")
     },
     formRegistro(req, res){
-        res.render("formRegistro")
+        res.render("formRegistro.ejs")
     }
 }
 
