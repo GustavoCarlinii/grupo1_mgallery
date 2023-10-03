@@ -1,28 +1,33 @@
 const express = require('express');
 const path = require('path');
 const port = 3000;
+const mainRoutes = require('./routes/main');
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use('/', mainRoutes);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'views/home.html'));
+    res.sendFile(path.join(__dirname, 'views/home.ejs'));
 });
 
 app.get('/detalleProducto', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'views/detalleProducto.html'));
+    res.sendFile(path.join(__dirname, 'views/detalleProducto.ejs'));
 });
 
 app.get('/carritoCompras', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'views/carritoCompras.html'));
+    res.sendFile(path.join(__dirname, 'views/carritoCompras.ejs'));
 });
 
 app.get('/formRegistro', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'views/formRegistro.html'));
+    res.sendFile(path.join(__dirname, 'views/formRegistro.ejs'));
 });
 
 app.get('/formIngreso', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'views/formIngreso.html'));
+    res.sendFile(path.join(__dirname, 'views/formIngreso.ejs'));
 });
 
 app.listen(port, () =>{
