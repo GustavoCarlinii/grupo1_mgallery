@@ -1,0 +1,38 @@
+<%- include("partials/head") %>
+<body>
+    <%- include("partials/header") %>
+    <main class="main-carrito">
+        <form action="">
+            <div class="container">
+                <h1>Iniciá sesión</h1>
+                <div class="form-container">
+                        <label for="correo-electrónico">Correo electrónico</label>
+                        <input type="text" name="correo-electrónico" id="correo-electrónico" required>
+                    </div>
+                    <div class="form-container">
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" name="password" minlength="2" id="pass" required>
+                    </div>
+                    <div class="boton-carrito">
+                        <button class="button-ingreso" type="submit">Ingresar</button>
+                    </div>
+                </div>
+            <div class="ingreso-alternativo">
+                <p>
+                    ¿No tenés una cuenta?
+                    <a href="/formRegistro">Registrate</a>
+                </p>
+            </div>
+            </div>
+        </form>
+        <section class="ingreso-invitado">
+            <h2>Continuar como invitado</h2>
+            <button class="ingreso-invitado">
+                Ingresar como invitado
+            </button>
+        </section>      
+    </main>
+    <%- include("partials/footer") %>
+</body>
+
+</html>
