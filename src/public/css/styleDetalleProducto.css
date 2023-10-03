@@ -13,7 +13,6 @@ main {
 .titulo {
     display: flex;
     justify-content: center;
-
 }
 
 .nombre-pintura {
@@ -27,16 +26,11 @@ main {
     display: flex;
     justify-content: center;
     margin: 7px;
-
 }
 
 /* modificar la imagen  */
-
-
-
 #image-principal {
     width: 90%;
-
 }
 
 #conteiner-image-principal {
@@ -44,7 +38,6 @@ main {
     justify-content: center;
     margin-bottom: 5px;
 }
-
 
 #conteiner-secundary {
     display: flex;
@@ -56,14 +49,12 @@ main {
 #image-secondary {
     width: 92px;
     height: 100px;
-
 }
 
 /* #conteiner-image-principal,
 #conteiner-secundary {
     height: 30%;
 } */
-
 /* los buttoms */
 button {
     text-align: center;
@@ -76,17 +67,13 @@ button {
     background-color: aliceblue;
     padding: 7px;
     border: 3px solid;
-
     /* font-size:3vw */
-
 }
 
 .buttom2 {
     background-color: black;
     color: aliceblue;
     padding: 7px;
-
-
     /* font-size:3vw */
 }
 
@@ -94,7 +81,7 @@ button {
     display: flex;
     font-weight: 800;
     padding: 15px;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .Descripcion2 {
@@ -104,7 +91,6 @@ button {
 }
 
 /* price and status accommodation */
-
 #conteiner-main-article {
     width: 40%;
 }
@@ -113,7 +99,6 @@ button {
     display: flex;
     text-align: center;
 }
-
 
 #conteiner-secundary-article {
     width: 60%;
@@ -126,48 +111,31 @@ button {
     margin: 1px;
 }
 
-
 #conteiner-buttom {
     display: flex;
     margin-top: 20px;
     justify-content: space-evenly;
-
 }
-
 
 #image-secondary {
     display: none;
 }
 
-@media (min-width:426px) {
-    
-    .nombre-pintura{
+@media (min-width:425px) {
+
+
+
+    .nombre-pintura {
         position: absolute;
         left: 54%;
         top: 14%;
-        padding-top: 20px ;
     }
-    /* titulo obras */
-    .titulo {
-        position: relative;
-        top: 50px;
-        left: 120px;
-}   
-    
-    
+
+
     #conteiner {
         display: flex;
         align-items: start;
         flex-wrap: wrap;
-        flex-direction: row;
-        /* width: 40%; */
-        margin-top: 4%;
-        margin-left: 1%;
-        margin-bottom: 1%;
-        padding: 2%;
-    }
-    .contenedor-imagenes{
-        display: flex;
         flex-direction: column;
     }
 
@@ -209,7 +177,6 @@ button {
         position: absolute;
     }
 
-
     #conteiner-buttom {
         /* display: flex;
         width: 300px;
@@ -223,49 +190,52 @@ button {
         left: 20%; */
         display: flex;
         position: absolute;
+        top: 50%;
         top: 45%;
         left: 50%;
         width: 300px;
     }
 
+    .buttom1 {
+        display: flex;
 
-.buttom1 {
-    display: flex;
-   
+    }
 
-}
+    .buttom2 {
+        display: flex;
+        top: -10px;
+        left: 30%;
+        top: -5px;
 
-.buttom2 {
-    display: flex;
-    top: -10px;
-    left: 30%;
-    top: -5px;
-  
-}
+    }
 
-.Descripcion2 {
-    width: 46%;
-    display: flex;
-    position: absolute;
-    left: 52%;
-    top: 58%;
+    .Descripcion2 {
+        width: 46%;
+        display: flex;
+        position: absolute;
+        left: 52%;
+        top: 62%;
+        top: 58%;
 
-}
+    }
 
+    .nombre-pintura2 {
+        position: absolute;
+        left: 52%;
+        bottom: 40%;
+        top: 58%;
+        top: 53%;
+    }
 
-.nombre-pintura2 {
-    position: absolute;
-    left: 52%;
-    bottom: 40%;
-    top: 53%;
-}
-
-.Descripcion{
+    .Descripcion {
 
         position: relative;
         width: 30%;
         top: 40px;
         left: 50%;
 
+    }
+    .contenedor-imagenes {
+        width: 100%;
     }
 }
