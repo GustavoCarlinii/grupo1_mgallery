@@ -29,7 +29,9 @@ app.get('/formRegistro', (req, res) => {
 app.get('/formIngreso', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/formIngreso.ejs'));
 });
-
+app.get('/productsAddEdit', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'views/productsAddEdit'))
+})
 app.listen(port, () =>{
     console.log(`Servidor activo en http://localhost:${port}`);
 });

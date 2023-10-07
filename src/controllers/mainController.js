@@ -13,6 +13,9 @@ const controller = {
     },
     formRegistro(req, res){
         res.render("formRegistro.ejs")
+    },
+    productsAddEdit(req, res){
+        res.render("productsAddEdit.ejs")
     }
 }
 
