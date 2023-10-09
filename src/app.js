@@ -11,8 +11,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', mainRoutes);
-app.use('/', userRoutes);
-app.use('/', productsRoutes);
+app.use('/user', userRoutes);
+app.use('/product', productsRoutes);
 
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'views/home.ejs'));

@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         
         <% locals.styles && styles.forEach(style =>{ %>
-            <link rel="stylesheet" href="css/<%= style%>.css"/>
+            <link rel="stylesheet" href="/css/<%= style%>.css"/>
         <% }); %>
 
         <title><%= locals.title ? `Müller Gallery - ${title}` : 'Müller Gallery' %></title>
