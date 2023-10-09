@@ -3,6 +3,7 @@ const path = require('path');
 const port = 3000;
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/userRouter');
+const productsRoutes = require('./routes/productsRouter')
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -10,7 +11,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use('/', mainRoutes);
-app.use('/', userRoutes)
+app.use('/', userRoutes);
+app.use('/', productsRoutes);
 
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'views/home.ejs'));
