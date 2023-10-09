@@ -4,6 +4,7 @@
     <main class="main-productsAddEdit">
         <h1>Crear producto</h1>
         <form action="/productos" method="">
+            <div class="main-div">
             <div class="name-product">
                 <label for="nombre-producto">Nombre del producto</label>
                 <input type="text" name="name" id="nombre-producto">
@@ -32,7 +33,11 @@
                 <label for="price">Precio</label>
                 <input type="number" name="price" id="price">
             </div>
-        <input type="submit" value="Crear">
+        </div>
+            <div class="button-container">
+                <button class="button-reset" type="submit">Borrar</button>
+                <button class="button-sumbit" type="submit">Agregar</button>
+            </div>
         </form>
 
 

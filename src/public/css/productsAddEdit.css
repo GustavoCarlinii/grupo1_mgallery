@@ -4,8 +4,46 @@
     flex-direction: column;
     align-items: center;
 }
-.main-productsAddEdit div{
-    padding: 10px;
+.main-div div{
+    text-align: start;
     display: flex;
     flex-direction: column;
+    padding: 10px;
+}
+.main-div div label{
+    text-align: start;
+    padding: 5px;
+    font-weight: 700;
+}
+.main-div input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #d9d9d9;
+}
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.button-sumbit, .button-reset{
+    background-color: #000;
+    color: #fff;
+    padding: 10px 50px;
+    border: none;
+
+    cursor: pointer;
+    border-radius: 0;
+    align-self: center;
+
+    margin-top: 25px;
+
+}
+
+.button-container .button-sumbit:hover{
+    box-shadow: #00000072 5px 5px 1px;
+    transition: 800ms;
 }
