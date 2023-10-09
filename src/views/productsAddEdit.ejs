@@ -1,8 +1,39 @@
-<%- include("partials/head", {styles: ['style-header-footer'], title: 'Agregar o editar un producto'}) %>
+<%- include("partials/head", {styles: ['style-header-footer','productsAddEdit'], title: 'Agregar o editar un producto'}) %>
 <body>
     <%- include('partials/header') %>
-    <main>
-        
+    <main class="main-productsAddEdit">
+        <h1>Crear producto</h1>
+        <form action="/productos" method="">
+            <div class="name-product">
+                <label for="nombre-producto">Nombre del producto</label>
+                <input type="text" name="name" id="nombre-producto">
+            </div>
+            <div class="description">
+                <label for="descripcion">Descripción</label>
+                <input type="text" name="description" id="descripcion">
+            </div>
+            <div class="select-img">
+                <label for="select-img">Seleciona imagen del producto</label>
+                <input type="file" name="image" id="select-img">
+            </div>
+            <div class="select-category">
+                <label for="select-categoria">Selecciona la categoria del producto</label>
+                <select name="category" id="select-categoria">
+                    <option value="1">Categoría 1</option>
+                    <option value="2">Categoría 2</option>
+                    <option value="3">Categoría 3</option>
+                </select>
+            </div>
+            <div class="colors">
+                <label for="colors">Colores (separados por comas)</label>
+                <input type="text" name="colores" id="colors">
+            </div>
+            <div class="price">
+                <label for="price">Precio</label>
+                <input type="number" name="price" id="price">
+            </div>
+        <input type="submit" value="Crear">
+        </form>
 
 
     </main>
