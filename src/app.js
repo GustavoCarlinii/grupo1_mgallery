@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path');
-const port = 3000;
+
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/userRouter');
-const productsRoutes = require('./routes/productsRouter')
+const productsRoutes = require('./routes/productsRouter');
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -36,6 +37,8 @@ app.use('/product', productsRoutes);
 // app.get('/productsAddEdit', (req, res) =>{
 //     res.sendFile(path.join(__dirname, 'views/productsAddEdit'))
 // })
+
+const port = 3000;
 app.listen(port, () =>{
     console.log(`Servidor activo en http://localhost:${port}`);
 });
