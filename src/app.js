@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const expresSession = requiere('express-session');
+const cookieParser = requiere ('cookie-parser');
 const port = 3000;
 const mainRoutes = require('./routes/main');
 const app = express();
