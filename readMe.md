@@ -33,17 +33,17 @@ Por último, la página seleccionada es la única de las mencionadas que tiene c
 
 Hola, mi nombre es Lautaro Vega y soy de la ciudad de Rafaela. Me interesa la tecnología y sobre todo la programación. Durante el progreso de este trabajo me gustaría aprender nuevas tecnologías y las habilidades necesarias para poder dedicarme profesionalmente al desarrollo web.
 
-
-Mi nombre es Tomás Angeloni, tengo 18 años y soy de la ciudad de San Justo. Me interesa todo el mundo de los que es computadoras y tecnologías y es por eso que me anote a este curso, mi objetivo es poder aprender lo mas que pueda para algún día poder trabajar de esto.
-
-
 Mi nombre es Gustavo Carlini tengo 28 años actualmente y estoy en los ultimos años de la carrera de ingeniera industrial, arranque a  incursionar en el mundo de la programacion al principio por curiosidad pero ahora se volvio algo que realmente quiero hacer. Apunto a convertirme en un backend developer.
 
 
-Soy Aurora Müller, tengo un background sólido en diseño y actualmente estoy terminando la carrera de UXUI. Mi meta es formarme en un perfil completo que me permita ser el lazo entre programadores y diseñadores, logrando aunar el concepto y su realización.
 
-
-Mi nombre es Divo Mustafa Ragu Tengo 30 años. Desde hace años estoy interesado en el area informatica y de desarrollo. Tengo conocimientos en HTML, CSS3 y SASS. Quiero reforzar mi conocimientos y poder aprender mas en el area de programacion Front-End.
 
 #### Tablero de trabajo Trello Sprint 2
 https://trello.com/b/JEvr5ID2/g1-muller-gallery
+
+
+**Dependencias que se ultizan**:
+express, multer, ejs, sequelize, mysql2, cookie-parser, dotenv, express-session
+
+**Dependencias de desarrollo**:
+nodemon, sequelize-cli
