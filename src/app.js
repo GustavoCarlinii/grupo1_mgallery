@@ -1,37 +1,36 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const expresSession = requiere('express-session');
-const cookieParser = requiere ('cookie-parser');
-const port = 3000;
-const mainRoutes = require('./routes/main');
+const expresSession = require('express-session');
+const cookieParser = require ('cookie-parser');
+
+
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+// app.use(expresSession({
+//     secret: process.env.SECRET
+// } ));
+// preguntar lo de expressSession
+
+app.use(cookieParser());
+
+
+const mainRoutes = require('./routes/main');
+const productsRoutes = require('./routes/productsRouter');
+const userRoutes = require('./routes/userRouter')
+
 app.use('/', mainRoutes);
+app.use('/user', userRoutes);
+app.use('/product', productsRoutes);
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/home.ejs'));
-});
 
-app.get('/detalleProducto', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/detalleProducto.ejs'));
-});
-
-app.get('/carritoCompras', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/carritoCompras.ejs'));
-});
-
-app.get('/formRegistro', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/formRegistro.ejs'));
-});
-
-app.get('/formIngreso', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/formIngreso.ejs'));
-});
-
+const port = process.env.PORT || 3000;
 app.listen(port, () =>{
     console.log(`Servidor activo en http://localhost:${port}`);
 });
