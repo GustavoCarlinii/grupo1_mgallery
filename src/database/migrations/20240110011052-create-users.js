@@ -1,39 +1,31 @@
 'use strict';
-
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
-    await queryInterface.createTable('users', { 
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('users', {
       id: {
         primaryKey:true,
         type:Sequelize.INTEGER,
         autoIncrement:true,
         },
         first_name:{
-          type:Sequelize.STRING(45),
+          type:Sequelize.TEXT,
           allowNull:false,
         },
         last_name:{
-          type:Sequelize.STRING(45),
+          type:Sequelize.TEXT,
           allowNull:false,
         },
         email:{
-          type:Sequelize.STRING(45),
+          type:Sequelize.TEXT,
           allowNull:false,
         },
         postal_code:{
-          type:Sequelize.STRING(5),
+          type:Sequelize.TEXT,
           allowNull:false,
         },
         phone:{
-          type:Sequelize.STRING(45),
+          type:Sequelize.TEXT,
           allowNull:true,
         },
         birthdate:{
@@ -41,37 +33,38 @@ module.exports = {
           allowNull:true,
         },
         adress:{
-          type:Sequelize.STRING(45),
+          type:Sequelize.TEXT,
           allowNull:true,
         },
         password:{
-          type:Sequelize.STRING(45),
+          type:Sequelize.TEXT,
           allowNull:true,
         },
         roles_id: {
           type:Sequelize.INTEGER,
           references:{
-            model:"roles",
+            model:"Roles",
             key:"id",
           },
         },
         cities_id: {
           type:Sequelize.INTEGER,
           references:{
-            model:"cities",
+            model:"Cities",
             key:"id",
-          },
-        }
-  });
+          }, 
+        },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
+    });
   },
-
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
-    await queryInterface.dropTable('users')
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('users');
   }
 };
