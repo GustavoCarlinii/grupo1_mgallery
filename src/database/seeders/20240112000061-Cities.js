@@ -4,16 +4,16 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    await queryInterface.bulkInsert('roles', [
-      {
-        name: 'Administrador'
-      }, {
-        name: 'Usuario'
-      }
+    await queryInterface.bulkInsert('cities', [  
+      {name: 'Rafaela'},
+      {name: 'Santa fe'},
+      {name: 'Rosario'},
+      
     ], {});
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('roles', null, {});
+
+    await queryInterface.bulkDelete('cities', null, {});
   }
 };
