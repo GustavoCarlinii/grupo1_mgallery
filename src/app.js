@@ -8,16 +8,14 @@ const cookieParser = require ('cookie-parser');
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-// app.use(expresSession({
-//     secret: process.env.SECRET
-// } ));
-// preguntar lo de expressSession
-
+app.use(expresSession({
+    secret: process.env.SECRET,
+} ));
 app.use(cookieParser());
 
 

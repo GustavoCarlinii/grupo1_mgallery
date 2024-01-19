@@ -10,52 +10,15 @@
             <p>PRIMAVERA SANGRIENTA</p>
         </div>
         <h2>OBRAS DISPONIBLES</h2>
-        <div class="imagenes">
-            <div class="articulo">
-                <img src="/images/buho.jpg">
-                <p>Nombre de obra - autor</p>
-                <p>$precio</p>
+        <% locals.obrasDeArte && obrasDeArte.forEach ( obras => { %>
+            <div class="imagenes">
+                <div class="articulo">
+                    <img src="/images/buho.jpg">
+                    <p>Nombre de obra - autor</p>
+                    <p>$precio</p>
+                </div>
             </div>
-            <div class="articulo">
-                <img src="/images/buho.jpg">
-                <p>Nombre de obra - autor</p>
-                <p>$precio</p>
-            </div>
-            <div class="articulo">
-                <img src="/images/buho.jpg">
-                <p>Nombre de obra - autor</p>
-                <p>$precio</p>
-            </div>
-            <div class="articulo">
-                <img src="/images/buho.jpg">
-                <p>Nombre de obra - autor</p>
-                <p>$precio</p>
-            </div>
-        </div>
-        <h2>ARTISTAS DESTACADOS</h2>
-        <div class="imagenes">
-            <div class="articulo">
-                <img src="/images/buho.jpg">
-                <p>Nombre de obra - autor</p>
-                <p>$precio</p>
-            </div>
-            <div class="articulo">
-                <img src="/images/buho.jpg">
-                <p>Nombre de obra - autor</p>
-                <p>$precio</p>
-            </div>
-            <div class="articulo">
-                <img src="/images/buho.jpg">
-                <p>Nombre de obra - autor</p>
-                <p>$precio</p>
-            </div>
-            <div class="articulo">
-                <img src="/images/buho.jpg">
-                <p>Nombre de obra - autor</p>
-                <p>$precio</p>
-            </div>
-        </div>
-
+        <% }) %>
     </main>
     <hr>
     <%- include("partials/footer") %>

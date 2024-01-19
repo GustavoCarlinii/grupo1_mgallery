@@ -11,20 +11,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   ArtWorks.init({  
     name:{
-    type:Sequelize.TEXT,
+    type:DataTypes.TEXT,
     allowNull:false,
   },
   prices:{
-    type:Sequelize.TEXT,
+    type:DataTypes.TEXT,
     allowNull:false,
   },
   user_id: {
-    type:Sequelize.INTEGER,
-    references:{
-      model:"users",
-      key:"id",
-    },} 
-  }, {
+    type:DataTypes.INTEGER,
+     
+  }}, 
+  {
     sequelize,
     modelName: 'ArtWorks',
   });

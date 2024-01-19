@@ -1,8 +1,7 @@
-const controller = {
-    home(req, res){
-        res.render("home")
-    },
 
+
+const controller = {
+    
 }
 
 module.exports = controller;

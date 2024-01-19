@@ -49,4 +49,4 @@ express, multer, ejs, sequelize, mysql2, cookie-parser, dotenv, express-session
 nodemon, sequelize-cli
 
 **Pasos a seguir**:
-instalar las dependencias mencionadas, copiar el archivo .env.example y ajustarlo a tu configuracion.
+Instalar las dependencias mencionadas, copiar el archivo .env.example y ajustarlo a tu configuracion.

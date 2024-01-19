@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 
     }
   }
-  cities.init({
+  Roles.init({
     name: DataTypes.STRING
   }, {
     sequelize,
