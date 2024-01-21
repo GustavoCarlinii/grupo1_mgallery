@@ -12,6 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
+    id: {
+      type: DataTypes.INTEGER(10).UNSIGNED,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true
+    },
     first_name:{
       type:DataTypes.TEXT,
       allowNull:false,
@@ -69,4 +75,4 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 return  User;
-};  
+};

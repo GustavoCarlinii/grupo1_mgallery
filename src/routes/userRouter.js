@@ -9,6 +9,7 @@ router.get('/registro', userController.formRegistro);
 
 //router.get('/', userController.index)
 router.post('/create', userController.store);
-router.put('/:id/edit', userController.edit);
+router.get('/edit/:id', userController.edit);
+router.put('/update/:id', userController.update);
 
 module.exports=router;

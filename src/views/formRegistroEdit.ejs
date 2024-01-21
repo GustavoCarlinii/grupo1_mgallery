@@ -2,8 +2,8 @@
     <body>
         <%- include("partials/header") %>
         <main class="main-carrito">
-            <form action="/user/create" method="post">
-                <h1>Crea tu cuenta</h1>
+            <form action="/user/update/:id" method="post">
+                <h1>Edita tus perfil</h1>
                 <div class="container">
                     <div class="form-container">
                         <label for="nombre">Nombre</label>
@@ -38,8 +38,9 @@
                         <input type="text" name="adress" id="adress">
                     </div>
                 </div>
-                <div class="boton-carrito">                    
-                    <button type="submit" value="Registrar">Crear</button>
+                <div class="boton-carrito">
+                    <button type="reset">Borrar</button>
+                    <button type="submit" value="Registrar">Guardar</button>
                 </div>
             </form>
         </main>
