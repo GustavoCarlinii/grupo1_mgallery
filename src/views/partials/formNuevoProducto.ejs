@@ -1,0 +1,27 @@
+<%- include("partials/head", {styles: ['ingreso','style-carrito']}) %>
+<body>
+    <%- include("partials/header") %>
+    <main class="main-carrito">
+        <form action="/products/create" method="post">
+            <h1>Crea tu obra</h1>
+            <div class="container">
+                <div class="form-container">
+                    <label for="name">Nombre de la obra</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-container">
+                    <label for="price">Precio $</label>
+                    <input type="text" name="price" id="price">
+                </div>
+                <div class="form-container">
+                    <label for="descripcion">Correo electronico</label>
+                    <input type="number" name="descripcion" id="descripcion">
+                </div>
+            <div class="boton-carrito">                    
+                <button type="submit" value="Registrar">Crear</button>
+            </div>
+        </form>
+    </main>
+    <%- include("partials/footer") %>
+</body>
+</html>

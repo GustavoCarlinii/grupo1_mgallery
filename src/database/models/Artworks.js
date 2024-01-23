@@ -9,12 +9,22 @@ module.exports = (sequelize, DataTypes) => {
 
     }
   }
-  ArtWorks.init({  
-    name:{
+  ArtWorks.init({
+  id: {
+    type: DataTypes.INTEGER(10).UNSIGNED,
+    primaryKey: true,
+    allowNull: false,
+    autoIncrement: true
+  },  
+  name:{
     type:DataTypes.TEXT,
     allowNull:false,
   },
   prices:{
+    type:DataTypes.TEXT,
+    allowNull:false,
+  },
+  description:{
     type:DataTypes.TEXT,
     allowNull:false,
   },

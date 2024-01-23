@@ -17,12 +17,13 @@ const storage = multer.diskStorage ({
 });
 const upload = multer({ storage });
 
-router.get('/carrito-compras', productsController.carritoCompras);
+
 router.get('/:id', productsController.detalleProducto);
-//router.get('/productos', productsController.productsAddEdit);
-router.get('/', productsController.index)
+router.get('/register', productsController.formNuevoProd);
+//router.get('/', productsController.index)
 router.post('/create', productsController.store);
-router.put('/:id/edit', productsController.edit);
-router.delete('/:id', productsController.destroy);
+router.get('/edit/:id', productsController.edit);
+router.put('/update/:id', productsController.update);
+router.delete('/delete/:id', productsController.destroy);
 
 module.exports = router;

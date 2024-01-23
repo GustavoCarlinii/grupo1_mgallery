@@ -7,7 +7,6 @@ const router = express.Router();
 router.get('/ingreso', userController.formIngreso);
 router.get('/registro', userController.formRegistro);
 
-//router.get('/', userController.index)
 router.post('/create', userController.store);
 router.get('/edit/:id', userController.edit);
 router.put('/update/:id', userController.update);

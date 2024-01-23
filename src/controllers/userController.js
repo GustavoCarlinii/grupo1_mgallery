@@ -2,10 +2,10 @@ const db = require('../database/models');
 
 const userController = {
     formIngreso(req, res){
-        res.render("formIngreso.ejs")
+        res.render('formIngreso')
     },
     formRegistro(req, res){
-        res.render("formRegistro.ejs")
+        res.render('formRegistro')
     },
     async store(req, res){
         try {
@@ -18,15 +18,12 @@ const userController = {
         } catch (error) {
             return res.status(500).send(error);
         }
-
     },
     async edit(req, res){
         try{
-            const userEdit = db.User.findByPk(req.params.id);
-            //const userEdit = db.User.findOne({where: {id: req.params.id}});
-            //const userEdit = db.User.findOne({where: {first_name: "Lautaro"}});
+            const userEdit = await db.User.findByPk(req.params.id);
             console.log(userEdit);
-            return res.render('formRegistroEdit.ejs', {User: userEdit});
+            return res.render('formRegistroEdit', {User: userEdit});
         } catch (error) {
             return res.status(500).send(error);
         }
