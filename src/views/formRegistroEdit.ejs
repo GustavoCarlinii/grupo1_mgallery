@@ -2,7 +2,7 @@
 <body>
     <%- include("partials/header") %>
     <main class="main-carrito">
-        <form action="/user/update/<%= User.id %>?_method=PUT" method="POST">
+        <form action="/user/update/<%= User.id %>?_method=PUT" method="post">
             <h1>Modifica tus datos <%= User.first_name %></h1>
             <div class="container">
                 <div class="form-container">

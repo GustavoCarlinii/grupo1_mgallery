@@ -30,8 +30,9 @@ const userController = {
     },
     async update(req, res) {
         try {
+            console.log(1);
             await db.User.update({ ...req.body }, { where: { id: req.params.id } });
-            return res.redirect('/registro');
+            return res.redirect('/user/registro');
         } catch (error) {
             return res.status(500).send(error);
         }

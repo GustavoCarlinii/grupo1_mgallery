@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const expresSession = require('express-session');
 const cookieParser = require ('cookie-parser');
-
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(expresSession({
     secret: process.env.SECRET,
 } ));
 app.use(cookieParser());
-
+app.use(methodOverride('_method'));
 
 const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/productsRouter');
