@@ -38,6 +38,10 @@ module.exports = {
         },
         password:{
           type:Sequelize.TEXT,
+          allowNull:false,
+        },
+        img:{
+          type:Sequelize.TEXT,
           allowNull:true,
         },
         roles_id: {
