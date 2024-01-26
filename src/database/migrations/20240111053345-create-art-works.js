@@ -10,19 +10,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name:{
-          type:Sequelize.TEXT,
-          allowNull:false,
-        },
-        prices:{
-          type:Sequelize.TEXT,
-          allowNull:false,
-        },
-        user_id: {
-          type:Sequelize.INTEGER,
-          references:{
-            model:"users",
-            key:"id",
-          },
+        type:Sequelize.TEXT,
+        allowNull:false,
+      },
+      prices:{
+        type:Sequelize.TEXT,
+        allowNull:false,
+      },
+      description:{
+        type:Sequelize.TEXT,
+        allowNull:true,
+      },
+      user_id: {
+        type:Sequelize.INTEGER,
+        references:{
+          model:"users",
+           key:"id",
+        }},
 
       createdAt: {
         allowNull: false,
@@ -32,7 +36,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    }});
+    });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('ArtWorks');

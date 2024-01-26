@@ -1,11 +1,7 @@
-const Artworks = require('../database/models');
+const db = require('../database/models');
 
 const productsController = {
-    /*index(req, res){
-        res.render("home", {products: getProducts()}); //se renderiza la vista home.ejs con el listado de obras. Modificar
-    },*/
     formNuevoProd(req, res){
-        console.log(1);
         res.render('formNuevoProducto')
     },
     async detalleProducto(req, res){
@@ -26,8 +22,9 @@ const productsController = {
             };
             console.log(artworkNew);
             await db.Artworks.create(artworkNew);
-            return res.redirect('/');
+            return res.redirect('/products/register');
         } catch (error) {
+            console.error(error);
             return res.status(500).send(error);
         }
     },
