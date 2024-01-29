@@ -3,13 +3,13 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class ArtWorks extends Model {
+  class Artworks extends Model {
 
     static associate(models) {
 
     }
   }
-  ArtWorks.init({
+  Artworks.init({
   id: {
     type: DataTypes.INTEGER(10).UNSIGNED,
     primaryKey: true,
@@ -36,5 +36,5 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'ArtWorks',
   });
-  return ArtWorks;
+  return Artworks;
 };

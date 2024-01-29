@@ -5,20 +5,10 @@
         <div class="text-izq">
             <p>Próxima exhibición,</br>jueves 21 de septiembre</p>
         </div>
-        <img src="/images/banners.png">
+        <img src="/images/museo.jpg">
         <div class="text-der">
             <p>PRIMAVERA SANGRIENTA</p>
         </div>
-        <h2>OBRAS DISPONIBLES</h2>
-        <% locals.obrasDeArte && obrasDeArte.forEach ( obras => { %>
-            <div class="imagenes">
-                <div class="articulo">
-                    <img src="/images/buho.jpg">
-                    <p>Nombre de obra - autor</p>
-                    <p>$precio</p>
-                </div>
-            </div>
-        <% }) %>
     </main>
     <hr>
     <%- include("partials/footer") %>

@@ -1,0 +1,21 @@
+<%- include("partials/head", {styles: ['styles-home', 'style-carrito']}) %>
+<body>
+    <%- include("partials/header") %>
+    <main>
+        <br><br><br><br>
+        <h2>OBRAS DISPONIBLES</h2>
+        <% locals.ArtWorks && ArtWorks.forEach ( obra => { %>
+            <div class="imagenes">
+                <div class="articulo">
+                    <img src="/images/buho.jpg">
+                    <p><% obra.name %></p>
+                    <p>$<% obra.prices %></p>
+                    <% console.log(obra); %>
+                </div>
+            </div>
+        <% }) %>
+    </main>
+    <hr>
+    <%- include("partials/footer") %>
+</body>
+</html>

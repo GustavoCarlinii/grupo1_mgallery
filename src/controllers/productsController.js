@@ -1,6 +1,10 @@
 const db = require('../database/models');
 
 const productsController = {
+    async index (req, res){
+        let products = await db.ArtWorks.findAll();
+        res.render('productos', {products});
+        },
     formNuevoProd(req, res){
         res.render('formNuevoProducto')
     },
