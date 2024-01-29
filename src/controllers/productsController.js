@@ -3,14 +3,14 @@ const db = require('../database/models');
 const productsController = {
     async index (req, res){
         let products = await db.ArtWorks.findAll();
-        res.render('productos', {products});
+        res.render('productos', {ArtWorks: products});
         },
     formNuevoProd(req, res){
         res.render('formNuevoProducto')
     },
     async detalleProducto(req, res){
         try {
-            const artworkDetail = await db.Artworks.findByPk(req.params.id);
+            const artworkDetail = await db.ArtWorks.findByPk(req.params.id);
             if (!artworkDetail) {
                 return res.status(404).json({ message: 'Pelicula no encontrada' });
             }
@@ -24,9 +24,8 @@ const productsController = {
             const artworkNew = {
                 ...req.body         
             };
-            console.log(artworkNew);
-            await db.Artworks.create(artworkNew);
-            return res.redirect('/products/register');
+            await db.ArtWorks.create(artworkNew);
+            return res.redirect('/products');
         } catch (error) {
             console.error(error);
             return res.status(500).send(error);
@@ -34,23 +33,23 @@ const productsController = {
     },
     async edit(req, res){
         try {
-            const artworkEdit = await db.Artworks.findByPk(req.params.id);
-            return res.render('formNuevoProducto', { Artworks: artworkEdit });
+            const artworkEdit = await db.ArtWorks.findByPk(req.params.id);
+            return res.render('formProductoEdit', { ArtWorks: artworkEdit });
         } catch (error) {
             return res.status(500).send(error);
         }
     },
     async update(req, res) {
         try {
-            await db.Artworks.update({ ...req.body }, { where: { id: req.params.id } });
-            return res.redirect('/');
+            await db.ArtWorks.update({ ...req.body }, { where: { id: req.params.id } });
+            return res.redirect('/products');
         } catch (error) {
             return res.status(500).send(error);
         }
     },
     async destroy(req, res){
         try {
-            await db.Artworks.destroy({ where: { id: req.params.id } });
+            await db.ArtWorks.destroy({ where: { id: req.params.id } });
             return res.redirect('/');
         } catch (error) {
             return res.status(500).send(error);

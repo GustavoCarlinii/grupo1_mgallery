@@ -4,13 +4,13 @@
     <main>
         <br><br><br><br>
         <h2>OBRAS DISPONIBLES</h2>
-        <% locals.ArtWorks && ArtWorks.forEach ( obra => { %>
+        <% locals.ArtWorks && ArtWorks.forEach ( (obra) => { %>
+            <% console.log(obra); %>
             <div class="imagenes">
                 <div class="articulo">
                     <img src="/images/buho.jpg">
-                    <p><% obra.name %></p>
-                    <p>$<% obra.prices %></p>
-                    <% console.log(obra); %>
+                    <p><%- obra.name %></p>
+                    <p>$<%- obra.prices %></p>
                 </div>
             </div>
         <% }) %>

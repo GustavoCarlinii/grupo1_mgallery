@@ -1,0 +1,27 @@
+<%- include("partials/head", {styles: ['ingreso','style-carrito']}) %>
+<body>
+    <%- include("partials/header") %>
+    <main class="main-carrito">
+        <form action="/products/update/<%= ArtWorks.id %>?_method=PUT" method="post">
+            <h1>Modifica los datos del producto "<%= ArtWorks.name %>"</h1>
+            <div class="container">
+                <div class="form-container">
+                    <label for="name">Nombre de la obra</label>
+                    <input type="text" name="name" value="<%= ArtWorks.name %>" id="name">
+                </div>
+                <div class="form-container">
+                    <label for="prices">Precio $</label>
+                    <input type="text" name="prices" value="<%= ArtWorks.prices %>" id="prices">
+                </div>
+                <div class="form-container">
+                    <label for="description">Descripcion</label>
+                    <input type="text" name="description" value="<%= ArtWorks.description %>" id="description">
+                </div>
+            <div class="boton-carrito">                    
+                <button type="submit" value="Registrar">Guardar cambios</button>
+            </div>
+        </form>
+    </main>
+    <%- include("partials/footer") %>
+</body>
+</html>
