@@ -89,6 +89,38 @@ form .container h1{
     width: fit-content;
 }
 
+/* CSS PARA VALIDACION DE FORMULARIO */
+@keyframes shake {
+    0% {transform: translateX(0);}
+
+    20% {transform: translateX(-5px);}
+
+    40% {transform: translateX(5px);}
+
+    60% {transform: translateX(-5px);}
+
+    80% {transform: translateX(5px);}
+
+    100% {transform: translateX(0);}
+}
+.is-valid {
+    color: #198754;
+}
+
+.is-invalid {
+    color: red;
+    border: 1px red solid;
+    animation: shake 0.5s;
+    animation-duration: 0.5s;
+    border-radius: 2px;
+}
+
+.text-danger{
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+}
+
 
 @media screen and (max-width: 768px) {
     .container {

@@ -40,7 +40,7 @@ module.exports = {
           type:Sequelize.TEXT,
           allowNull:false,
         },
-        img:{
+        profile_pic:{
           type:Sequelize.TEXT,
           allowNull:true,
         },

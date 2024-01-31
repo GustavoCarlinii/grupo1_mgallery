@@ -1,13 +1,16 @@
-const { check, body } = require('express-validator');
+const {  body } = require('express-validator');
+
 
 const userRegisterValidator = [
-    check("first_name").notEmpty().withMessage('El nombre es requerido!'),
+    body("first_name").notEmpty().withMessage('El nombre es requerido!'),
+    body("last_name").notEmpty().withMessage('El apellido es requerido!'),
     body('email')
-        .isEmail().withMessage('Formato no válido')
-        .not().isEmpty().withMessage('Ingrese una dirección de correo electrónico válida'), 
+        .notEmpty().withMessage('Ingrese una dirección de correo electrónico válida'), 
     body('password')
-        .not().isEmpty().withMessage('El password es requerido!')
-        .isLength({ min: 8 }).withMessage('La contraseña es requerida y debe tener al menos 8 caracteres')
+        .notEmpty()
+        .withMessage('Ingresa una contraseña').bail()
+        .isLength({ min: 8 }).withMessage('La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número, un caracter especial y una longitud minima de 8 caracteres').bail()
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/),
 ];
 
 
