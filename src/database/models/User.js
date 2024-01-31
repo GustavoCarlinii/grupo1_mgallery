@@ -48,6 +48,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     password:{
       type:DataTypes.TEXT,
+      allowNull:false,
+    },
+    img:{
+      type:DataTypes.TEXT,
       allowNull:true,
     },
     roles_id: {

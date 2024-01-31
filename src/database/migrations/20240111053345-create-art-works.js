@@ -9,25 +9,29 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name:{
-        type:Sequelize.TEXT,
-        allowNull:false,
+      name: {
+        type: Sequelize.TEXT,
+        allowNull: false,
       },
-      prices:{
-        type:Sequelize.TEXT,
-        allowNull:false,
+      prices: {
+        type: Sequelize.TEXT,
+        allowNull: false,
       },
-      description:{
-        type:Sequelize.TEXT,
-        allowNull:true,
+      description: {
+        type: Sequelize.TEXT,
+        allowNull: true,
       },
       user_id: {
-        type:Sequelize.INTEGER,
-        references:{
-          model:"users",
-           key:"id",
-        }},
-
+        type: Sequelize.INTEGER,
+        references: {
+          model: "users",
+          key: "id",
+        }
+      },
+      img: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

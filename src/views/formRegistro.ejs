@@ -1,13 +1,21 @@
 <%- include("partials/head", {styles: ['ingreso','style-carrito']}) %>
-    <body>
+<!-- enctype="multipart/form-data -->
+<body>
         <%- include("partials/header") %>
         <main class="main-carrito">
-            <form action="/user/create" method="post">
+            <form action="/user/create" method="post" >
+                
                 <div class="container">
                     <h1>Crea tu cuenta</h1>
                     <div class="form-container">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="first_name" id="nombre">
+                        <label for="first_name">Nombre</label>
+    <input type="text" name="first_name" id="nombre" value="<%= locals.oldData ? oldData.first_name : null%>">
+                        <p class="error-message" id="error-name"></p>
+                        <% if (locals.errors && errors.first_name) { %>
+                            <div class="text-danger">
+                                <%= errors.first_name.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="form-container">
                         <label for="apellido">Apellido</label>
@@ -37,10 +45,10 @@
                         <label for="adress">Direccion</label>
                         <input type="text" name="adress" id="adress">
                     </div>
-                    <div class="form-container">
-                        <label for="adress">Direccion</label>
-                        <input type="text" name="adress" id="adress">
-                    </div>
+                </div>
+                <div class="form-container">
+                    <label for="profile_pic">Foto de perfil</label>
+                    <input type="file" name="profile_pic" >
                 </div>
                 <div class="boton-carrito">                    
                     <button type="submit" value="Registrar">Crear</button>

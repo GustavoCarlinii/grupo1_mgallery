@@ -4,6 +4,7 @@ const path = require('path');
 const expresSession = require('express-session');
 const cookieParser = require ('cookie-parser');
 const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -26,6 +27,7 @@ const userRoutes = require('./routes/userRouter')
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/products', productsRoutes);
+
 
 
 const port = process.env.PORT || 3000;
