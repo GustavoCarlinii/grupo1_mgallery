@@ -2,7 +2,7 @@
 <body>
     <%- include("partials/header") %>
     <main class="main-carrito">
-        <form action="/products/create" method="post">
+        <form action="/products/create" method="post" enctype="multipart/form-data">
             <h1>Crea tu obra</h1>
             <div class="container">
                 <div class="form-container">
@@ -16,6 +16,10 @@
                 <div class="form-container">
                     <label for="description">Descripcion</label>
                     <input type="text" name="description" id="description">
+                </div>
+                <div class="form-container">
+                    <label for="img">Imagen del producto</label>
+                    <input type="file" name="img" id="img">
                 </div>
             <div class="boton-carrito">                    
                 <button type="submit" value="Registrar">Crear</button>

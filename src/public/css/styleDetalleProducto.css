@@ -51,10 +51,6 @@ main {
     height: 100px;
 }
 
-/* #conteiner-image-principal,
-#conteiner-secundary {
-    height: 30%;
-} */
 /* los buttoms */
 button {
     text-align: center;
@@ -121,9 +117,43 @@ button {
     display: none;
 }
 
-@media (min-width:425px) {
+.conteiner {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    padding-top: 6%;
+    padding-bottom: 3%;
+}
+
+.conteiner-imagenes {
+    width: 60%;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner-info {
+    width: 40%;
+    float: right;
+}
+
+.botones {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 50px;
+    border: none;
+
+    cursor: pointer;
+    border-radius: 0;
+    align-self: center;
+
+    margin-top: 25px;
+}
 
 
+@media (max-width: 361px) {
 
     .nombre-pintura {
         position: absolute;
@@ -156,10 +186,6 @@ button {
     }
 
     #conteiner-secundary-article {
-        /* display: flex;
-        justify-content: end;
-        align-items: center;
-        left: 25% */
         left: 52%;
         position: absolute;
         top: 38%;
@@ -170,24 +196,12 @@ button {
         display: flex;
         justify-content: end;
         align-items: center;
-        /* top: -32px;
-        left: 37%; */
         top: 35%;
         left: 17%;
         position: absolute;
     }
 
     #conteiner-buttom {
-        /* display: flex;
-        width: 300px;
-        justify-content: space-evenly;
-        margin: auto; */
-        /* display: flex;
-        width: 60%;
-        margin: auto;
-        position: relative;
-        top: -140px;
-        left: 20%; */
         display: flex;
         position: absolute;
         top: 50%;
@@ -238,4 +252,32 @@ button {
     .contenedor-imagenes {
         width: 100%;
     }
+
+    .conteiner {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conteiner-imagenes {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .conteiner-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 362px) and (max-width: 768px) {
+
 }

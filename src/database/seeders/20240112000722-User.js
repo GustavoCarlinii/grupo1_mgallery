@@ -30,7 +30,7 @@ module.exports = {
         birthdate: "18/01/1992",
         adress: "Lisandro de la torre 1875",
         password: bcryp.hashSync('123456', 10),
-        roles_id: roleUser[0].id,
+        roles_id: roleAdmin[0].id,
         cities_id: cityRosario[0].id,
       }
     ], {});

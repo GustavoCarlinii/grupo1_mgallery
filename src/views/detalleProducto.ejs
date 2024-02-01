@@ -1,53 +1,23 @@
 <%- include("partials/head", {styles: ['styleDetalleProducto', 'style-carrito']}) %>
 <body>
     <%- include("partials/header") %>
-    <main class="main-detalle">
-        <div class="contenedor-titulo">
-            <div class="div-titulo">
-                <h1 class="titulo">Nombre Autor</h1>
-                <h2 class="nombre-pintura">Nombre de pintura</h2>
-                <p class="Descripcion">Lápices de colores sobre servilleta, 2023.</p>
-                <p class="Descripcion">Obra original, de 20 x 20 cm.</p>
-            </div>
-        </div>
-    <div id="conteiner">
-        <div class="contenedor-imagenes">
-            <div id="conteiner-image-principal">
-                <img id="image-principal" src="https://okdiario.com/img/2023/04/10/-es-malo-que-los-gatos-coman-moscas-y-mosquitos-635x358.jpg" alt="">
-            </div> 
-            <div id="conteiner-secundary">
-                <img id="image-secondary" src="https://okdiario.com/img/2023/04/10/-es-malo-que-los-gatos-coman-moscas-y-mosquitos-635x358.jpg" alt="">
-                <img id="image-secondary" src="https://okdiario.com/img/2023/04/10/-es-malo-que-los-gatos-coman-moscas-y-mosquitos-635x358.jpg" alt="">
-                <img id="image-secondary" src="https://okdiario.com/img/2023/04/10/-es-malo-que-los-gatos-coman-moscas-y-mosquitos-635x358.jpg" alt="">
-            </div>
-        </div>
-            <div id="main-article">
-                <div id="conteiner-main-article">
-                    <p id="price">$Precio</p>
-                </div>
-                <div id="conteiner-secundary-article">
-                <p id="status">Lista para enviar</p>
-                <p id="status">  Envío gratuito garantizado en las próximas 24 horas </p>
+    <main>
+        <div class="conteiner">
+            <div class="conteiner-imagenes">
+                <div id="conteiner-image-principal">
+                    <img src="/images/products/<%- ArtWorks.img %>">
                 </div>
             </div>
-            <div id="conteiner-buttom">
-                <button type="submit" class="buttom1">Agregar al carrito</button>
-                <a href="/carritoCompras"><button type="submit" class="buttom2">Compra ahora</button></a>
+            <div class="conteiner-info">            
+                <h2><%- ArtWorks.name %></h2>
+                <p>$ <%- ArtWorks.prices %></p>
+                <p ><%- ArtWorks.description %></p>
             </div>
         </div>
-    </div>
-    </div>
-        
-    <div class="div-titulo-segundo">
-        <p class="nombre-pintura2">Nombre de la pintura</p>
-        <p class="Descripcion2">Manuelita ha realizado numerosas obras sobre
-            la temática existencialista, siendo la más
-            conocida “El dolor de existir”, en lo que se
-            conoce como su Etapa Naranja.
-            <br>Con más de 100.000 copias vendidas alrededor
-            del mundo, hoy existe la posibilidad de adquirir
-            la pieza original.</p>
-    </div>
+        <div>
+            <button class="botones"><a href="edit/<%= ArtWorks.id %>">Editar producto</a></button>
+            <button class="botones"><a href="delete/<%= ArtWorks.id %>">Eliminar producto</a></button>
+        </div>
     </main>
     <%- include("partials/footer") %>
 </body>

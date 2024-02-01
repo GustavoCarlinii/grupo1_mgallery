@@ -21,6 +21,10 @@ module.exports = {
         type:Sequelize.TEXT,
         allowNull:true,
       },
+      img:{
+        type:Sequelize.TEXT,
+        allowNull:true,
+      },
       user_id: {
         type:Sequelize.INTEGER,
         references:{

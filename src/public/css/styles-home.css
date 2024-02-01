@@ -1,11 +1,29 @@
-  
 .imagenes {
-    margin: 0 auto;
-    width: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.articulos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.articulo {
+  width: 27%;
+  margin: 0 1.66%;
+}
+
+.imagenes > div {
+  margin: 10px;
+  width: 33.33%;
+  flex-basis: 50%;
 }
 
 main h2{
-  padding-left: 6%;
+  margin-top: 5%;
+  display: block;
 }
   
 main img {
@@ -33,35 +51,36 @@ main img {
   position: relative;
 }
 
-.articulo p{
-  margin-left: 10%;
-}
-
-@media (min-width: 361px) {
+@media (max-width: 361px) {
 
   .imagenes {
-    display: flex;
-    flex-wrap: wrap;
     width: 90%;
-    justify-content: space-around;
     margin: 0 auto;
   }
   
   .imagenes > div {
     margin: 10px;
-    width: 40%;
   }
 
   .articulo:hover{
     box-shadow: 5px 0px 5px 0px rgb(100, 100, 100);
   }
 
-  main h2{
-    padding-left: 60px;
+  .articulo {
+    width: 90%;
+    margin: 0 1.66%;
+    display: flex;
+    align-items: center;
+  }
+
+  .articulos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 362px) and (max-width: 768px) {
 
     .imagenes {
       display: flex;
@@ -79,4 +98,22 @@ main img {
     .text-izq, .text-der{
       font-size: 22px;
     }
+
+    main h2{
+      margin-top: 10%;
+      display: block;
+    }
+
+    .articulo {
+      width: 45%;
+      margin: 0 1.66%;
+      display: flex;
+      align-items: center;
+    }
+  
+    .articulos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
   }
+}

@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const db = require('../database/models');
 
 const userController = {
@@ -7,16 +8,65 @@ const userController = {
     formRegistro(req, res){
         res.render('formRegistro')
     },
-    async store(req, res){
-        try {
-            const user = {
-                ...req.body         
-           };
-            await db.User.create(user);
-            return res.redirect('/user/ingreso')
-        } catch (error) {
-            return res.status(500).send(error);
+    profile (req, res){
+        const user = req.session.user;
+        return res.render('profile', {user});
+    },
+    login (req, res){
+        req.session.user = {
+            timestamp: Date.now(),
+            ...req.body,    //VER SI ESTO ES POSIBLE O SI SE DEBE DETALLAR UNO X UNo. EJ: name: req.body.name
         }
+        res.cookie('email', req.body.email, {maxAge: 120000}); //Si falla el maxAge sacarlo, no es obligatorio
+        return res.redirect('/profile');
+    },
+    logout (req, res){
+        req.session.user = undefined;
+        res.clearCookie('email');
+        return res.redirect('/');
+    },
+    async store(req, res){
+        const errors = validationResult(req);
+        if (errors.isEmpty()) {
+            try {
+                const existingUser = await db.User.findOne({
+                    where: {
+                        email: req.body.email
+                    }
+                });
+        if (existingUser) {
+                    return res.render('formRegistro', {
+                        errors: {
+                            email: {
+                                msg: "El email ya se encuentra registrado"
+                            }
+                        },
+                        oldData: req.body
+                    });
+        } else {
+                const user = { ...req.body };
+                console.log(user);
+                await db.User.create(user);
+                return res.redirect('/user/ingreso');
+                }
+            } catch (error) {
+                res.render('formRegistro', {
+                    errors: {
+                        global: {
+                            msg: "Hubo un error al crear el usuario"
+                        }
+                    },
+                    oldData: req.body
+                });
+            }
+        } else {
+            console.log("errores del formulario", errors.mapped());
+            return res.render('formRegistro', {
+                errors: errors.mapped(),
+                oldData: req.body,
+            });
+        }
+        console.log('Errores del formulario:', req.locals.errors); 
     },
     async edit(req, res){
         try{

@@ -28,10 +28,14 @@ module.exports = (sequelize, DataTypes) => {
     type:DataTypes.TEXT,
     allowNull:true,
   },
+  img:{
+    type:DataTypes.TEXT,
+    allowNull: true,
+  },
   user_id: {
     type:DataTypes.INTEGER,
      
-  }}, 
+  }},
   {
     sequelize,
     modelName: 'ArtWorks',

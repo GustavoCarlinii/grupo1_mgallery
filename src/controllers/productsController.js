@@ -12,9 +12,9 @@ const productsController = {
         try {
             const artworkDetail = await db.ArtWorks.findByPk(req.params.id);
             if (!artworkDetail) {
-                return res.status(404).json({ message: 'Pelicula no encontrada' });
+                return res.status(404).json({ message: 'Obra no encontrada' });
             }
-            res.render('detalleProducto', { artworkDetail });
+            res.render('detalleProducto', { ArtWorks: artworkDetail });
         } catch (error) {
             res.status(500).send(error);
         }
@@ -22,7 +22,8 @@ const productsController = {
     async store(req, res){
         try {
             const artworkNew = {
-                ...req.body         
+                ...req.body,
+                img: req.file?.filename || 'default.jpg',
             };
             await db.ArtWorks.create(artworkNew);
             return res.redirect('/products');
@@ -41,15 +42,17 @@ const productsController = {
     },
     async update(req, res) {
         try {
+            console.log(req.body)
             await db.ArtWorks.update({ ...req.body }, { where: { id: req.params.id } });
+            console.log(req.body);
             return res.redirect('/products');
         } catch (error) {
             return res.status(500).send(error);
         }
     },
-    async destroy(req, res){
+    destroy(req, res){
         try {
-            await db.ArtWorks.destroy({ where: { id: req.params.id } });
+            db.ArtWorks.destroy({ where: { id: req.params.id } });
             return res.redirect('/');
         } catch (error) {
             return res.status(500).send(error);
