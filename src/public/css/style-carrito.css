@@ -119,6 +119,47 @@ body{
 .fa-instagram, .fa-facebook-square, .fa-twitter, .fa-pinterest{
     color: #fff;
 }
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.error-404{
+    display: flex;
+    color: red;
+    justify-content: center;
+}
+
+.error-text{
+    display: flex;
+    justify-content: center;
+
+}
+
+.error-button{
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0;
+    margin: 10px;
+    width: fit-content;
+}
+
+.error-image{
+    height: 30%;
+    width: 30%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.alignBot {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 @media (min-width:425px) {
     .first-article{
         display: inline-flex;

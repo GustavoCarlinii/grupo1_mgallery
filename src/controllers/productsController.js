@@ -23,7 +23,7 @@ const productsController = {
         try {
             const artworkNew = {
                 ...req.body,
-                img: req.file?.filename || 'default.jpg',
+                img: req.file?.filename || 'default.png',
             };
             await db.ArtWorks.create(artworkNew);
             return res.redirect('/products');
@@ -44,7 +44,6 @@ const productsController = {
         try {
             console.log(req.body)
             await db.ArtWorks.update({ ...req.body }, { where: { id: req.params.id } });
-            console.log(req.body);
             return res.redirect('/products');
         } catch (error) {
             return res.status(500).send(error);
@@ -53,7 +52,7 @@ const productsController = {
     destroy(req, res){
         try {
             db.ArtWorks.destroy({ where: { id: req.params.id } });
-            return res.redirect('/');
+            return res.redirect('/products');
         } catch (error) {
             return res.status(500).send(error);
         }

@@ -1,23 +1,28 @@
-<%- include("partials/head", {styles: ['styles-home', 'style-carrito']}) %>
+<%- include("partials/head", {styles: ['styles-home', 'listadoProductos', 'style-carrito', 'ingreso']}) %>
 <body>
     <%- include("partials/header") %>
-    <main>
-        
+    <main> 
         <h2>OBRAS DISPONIBLES</h2>
-        <div class = "articulos">
+        <div class = "articulosListado">
             <% locals.ArtWorks && ArtWorks.forEach ( (obra) => { %>                   
-                <div class="articulo">
+                <div class="articuloLista">
                     <a href="products/<%= obra.id %>">
-                    <img src="/images/products/<%- obra.img %>">
-                    <p><%- obra.name %></p>
-                    <p>$<%- obra.prices %></p>
+                        <img src="/images/products/<%- obra.img %>">
+                        <h3><%- obra.name %></h3>
+                        <h3>$<%- obra.prices %></h3>
                     </a>
                 </div>
             <% }) %>
         </div>
-    </main>
-    <a href="products/register">Crear un nuevo producto</a>
-    <hr>
+        <% if (locals.isLogged) { %>
+            <div class="boton-carrito">
+                <button class="button-ingreso">
+                    <a href="products/register">Crear producto</a>
+                </button>
+            </div>
+        <% } %>
+        <hr>
+    </main>  
     <%- include("partials/footer") %>
 </body>
 </html>

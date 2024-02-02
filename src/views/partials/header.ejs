@@ -6,10 +6,17 @@
     <!-- menu desktop -->
     <nav class="nav-carro">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/products">Productos</a></li>
-            <li><a href="/user/ingreso">Ingreso</a></li>
-            <li><a href="/user/registro">Registro</a></li>
+            <% if (locals.isLogged) { %>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Productos</a></li>
+                <li><a href="/user/profile">Mi perfil</a></li>
+                <li><a href="/user/logout">Logout</a></li>
+            <% } else{ %>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Productos</a></li>
+                <li><a href="/user/ingreso">Ingreso</a></li>
+                <li><a href="/user/registro">Registro</a></li>
+            <% } %>
         </ul>
     </nav>
     <!-- menu responsivo -->

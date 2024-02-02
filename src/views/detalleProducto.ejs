@@ -1,25 +1,36 @@
-<%- include("partials/head", {styles: ['styleDetalleProducto', 'style-carrito']}) %>
+<%- include("partials/head", {styles: ['styleDetalleProducto', 'style-carrito', 'ingreso']}) %>
 <body>
     <%- include("partials/header") %>
     <main>
-        <div class="conteiner">
-            <div class="conteiner-imagenes">
-                <div id="conteiner-image-principal">
-                    <img src="/images/products/<%- ArtWorks.img %>">
+        <div class="contenedorPrincip">
+            <div class="conteiner">
+                <div class="conteiner-imagenes">
+                    <div id="conteiner-image-principal">
+                        <img src="/images/products/<%- ArtWorks.img %>">
+                    </div>
+                </div>
+                <div class="conteiner-info">
+                    <h1><%- ArtWorks.name %></h1>
+                    <h2>$ <%- ArtWorks.prices %></h2>
+                    <p><%- ArtWorks.description %></p>
                 </div>
             </div>
-            <div class="conteiner-info">            
-                <h2><%- ArtWorks.name %></h2>
-                <p>$ <%- ArtWorks.prices %></p>
-                <p ><%- ArtWorks.description %></p>
+        </div>
+        <% if (locals.isLogged) { %>
+            <div class="boton-carrito">
+                <button class="button-ingreso">
+                    <a href="edit/<%= ArtWorks.id %>">Editar producto</a>
+                </button>
+                <button class="button-ingreso">
+                    <a href="delete/<%= ArtWorks.id %>">Eliminar producto</a>
+                </button>
             </div>
-        </div>
-        <div>
-            <button class="botones"><a href="edit/<%= ArtWorks.id %>">Editar producto</a></button>
-            <button class="botones"><a href="delete/<%= ArtWorks.id %>">Eliminar producto</a></button>
-        </div>
+        <% } else{ %>
+            <div class="boton-carrito">
+                <button class="button-ingreso">Comprar producto</button>
+            </div>
+        <% } %>
     </main>
     <%- include("partials/footer") %>
 </body>
-
 </html>

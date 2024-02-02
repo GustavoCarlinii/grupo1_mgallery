@@ -137,6 +137,9 @@ button {
 .conteiner-info {
     width: 40%;
     float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .botones {
@@ -152,6 +155,18 @@ button {
     margin-top: 25px;
 }
 
+.contenedorPrincip{
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner-info h2,
+.conteiner-info p,
+.conteiner-info h1 {
+    padding-bottom: 20px;
+    text-align: right;
+    margin: 0;
+}
 
 @media (max-width: 361px) {
 
@@ -160,7 +175,6 @@ button {
         left: 54%;
         top: 14%;
     }
-
 
     #conteiner {
         display: flex;

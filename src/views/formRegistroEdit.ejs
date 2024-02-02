@@ -22,16 +22,18 @@
                     <input type="text" name="postal_code" value="<%= User.postal_code %>" id="postal_code">
                 </div>
                 <div class="form-container">
-                    <label for="phone">Telefono</label>
-                    <input type="text" name="phone" value="<%= User.phone %>" id="phone">
-                </div>
-                <div class="form-container">
                     <label for="adress">Direccion</label>
                     <input type="text" name="adress" value="<%= User.adress %>" id="adress">
                 </div>
+                <div class="form-container">
+                    <label for="phone">Telefono</label>
+                    <input type="text" name="phone" value="<%= User.phone %>" id="phone">
+                </div>
             </div>
-            <div class="boton-carrito">                    
-                <button type="submit">Guardar cambios</button>
+            <div class="boton-carrito">
+                <button class="button-ingreso" type="submit">
+                    Guardar cambios
+                </button>
             </div>
         </form>
     </main>

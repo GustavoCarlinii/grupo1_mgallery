@@ -79,10 +79,9 @@ form .container h1{
     color: #fff;
     padding: 10px;
     border: none;
-
     cursor: pointer;
     border-radius: 0;
-
+    text-decoration: none;
     width: fit-content;
 }
 
@@ -118,14 +117,14 @@ form .container h1{
     font-weight: bold;
 }
 
+.hacete-cuenta{
+    display: flex;
+    justify-content: center;
+}
 
-@media screen and (max-width: 768px) {
-    .container {
-        width: 100%;
-    }
-    h1{
-        padding-top: 70px;
-    }
+a {
+    color: #fff;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 768px) {

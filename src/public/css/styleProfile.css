@@ -1,0 +1,12 @@
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  h1{
+    padding-top: 4%;
+  }

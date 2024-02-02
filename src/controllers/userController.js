@@ -1,28 +1,41 @@
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
+const bcryptjs = require('bcryptjs');
+const { log } = require('console');
 
 const userController = {
     formIngreso(req, res){
         res.render('formIngreso')
     },
     formRegistro(req, res){
-        res.render('formRegistro')
+        return res.render('formRegistro')
     },
     profile (req, res){
-        const user = req.session.user;
-        return res.render('profile', {user});
+        res.render('profile', {
+            user: req.session.userLogged
+        });
     },
-    login (req, res){
-        req.session.user = {
-            timestamp: Date.now(),
-            ...req.body,    //VER SI ESTO ES POSIBLE O SI SE DEBE DETALLAR UNO X UNo. EJ: name: req.body.name
-        }
-        res.cookie('email', req.body.email, {maxAge: 120000}); //Si falla el maxAge sacarlo, no es obligatorio
-        return res.redirect('/profile');
+    async loginProcess (req, res){
+        let userLogin = await db.User.findOne({ where: { email: req.body.email } });
+            if (userLogin) {
+                let verifPassword = bcryptjs.compareSync(req.body.password, userLogin.password)
+                if (verifPassword) {
+                    delete userLogin.password;
+                    req.session.userLogged = userLogin;
+                    return res.redirect('/user/profile')
+                }
+            }
+        return res.render('formIngreso', {
+            errors: {
+                email: {
+                    msg: 'Datos ingresados inválidos'
+                }
+            }
+        });
+        
     },
     logout (req, res){
-        req.session.user = undefined;
-        res.clearCookie('email');
+        req.session.destroy();
         return res.redirect('/');
     },
     async store(req, res){
@@ -34,7 +47,7 @@ const userController = {
                         email: req.body.email
                     }
                 });
-        if (existingUser) {
+            if (existingUser) {
                     return res.render('formRegistro', {
                         errors: {
                             email: {
@@ -43,12 +56,11 @@ const userController = {
                         },
                         oldData: req.body
                     });
-        } else {
-                const user = { ...req.body };
-                console.log(user);
+            } else {
+                const user = { ...req.body, img: req.file?.filename || 'default.png'};
                 await db.User.create(user);
                 return res.redirect('/user/ingreso');
-                }
+            }
             } catch (error) {
                 res.render('formRegistro', {
                     errors: {
@@ -79,7 +91,7 @@ const userController = {
     async update(req, res) {
         try {
             await db.User.update({ ...req.body }, { where: { id: req.params.id } });
-            return res.redirect('/user/registro');
+            return res.redirect('/user/profile');
         } catch (error) {
             return res.status(500).send(error);
         }

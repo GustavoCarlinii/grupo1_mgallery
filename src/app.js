@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
@@ -19,6 +21,7 @@ app.use(expresSession({
 }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
+app.use(userLoggedMiddleware);
 
 const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/productsRouter');
@@ -27,6 +30,9 @@ const userRoutes = require('./routes/userRouter')
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/products', productsRoutes);
+app.use((req, res, next) => {
+    res.status(404).render('404');
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () =>{

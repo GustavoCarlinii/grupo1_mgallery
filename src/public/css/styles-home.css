@@ -42,6 +42,7 @@ main img {
   padding-left: 10px;
   position: relative;
   top: 3.7em;
+  font-size: 18px;
 }
 
 .text-der {
@@ -49,6 +50,7 @@ main img {
   padding-right: 10px;
   bottom: 2.7em;
   position: relative;
+  font-size: 18px;
 }
 
 @media (max-width: 361px) {
@@ -59,7 +61,7 @@ main img {
   }
   
   .imagenes > div {
-    margin: 10px;
+    margin: 0px;
   }
 
   .articulo:hover{
@@ -115,5 +117,15 @@ main img {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+    }
+
+    .text-der, .text-izq{
+      font-size: 16px;
+    }
+}
+
+@media (max-width: 361px) {
+  .text-der, .text-izq{
+    font-size: 10px;
   }
 }

@@ -2,35 +2,35 @@
 <body>
     <%- include("partials/header") %>
     <main class="main-carrito">
-        <form action="">
+        <form action="/user/ingreso" method="post">
             <div class="container">
                 <h1>Iniciá sesión</h1>
                 <div class="form-container">
-                        <label for="correo-electrónico">Correo electrónico</label>
-                        <input type="text" name="correo-electrónico" id="correo-electrónico" required>
-                    </div>
-                    <div class="form-container">
-                        <label for="contraseña">Contraseña</label>
-                        <input type="password" name="password" minlength="2" id="pass" required>
-                    </div>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-container">
+                    <label for="contraseña">Contraseña</label>
+                    <input type="password" name="password" minlength="2" id="pass" required>
+                    <% if (locals.errors && errors.email){ %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                    <% } %>
                     <div class="boton-carrito">
                         <button class="button-ingreso" type="submit">Ingresar</button>
                     </div>
                 </div>
-            <div class="ingreso-alternativo">
-                <p>
-                    ¿No tenés una cuenta?
-                    <a href="/user/Registro">Registrate</a>
-                </p>
             </div>
-            </div>
-        </form>
+        </form>      
         <section class="ingreso-invitado">
-            <h2>Continuar como invitado</h2>
-            <button class="ingreso-invitado">
-                Ingresar como invitado
-            </button>
-        </section>      
+            <h2 class="hacete-cuenta">¿No tenés una cuenta?</h2>
+            <div class="boton-carrito">
+                <button class="button-ingreso">
+                    <a href="/user/Registro">Registrate</a>
+                </button>
+            </div>
+        </section>
     </main>
     <%- include("partials/footer") %>
 </body>

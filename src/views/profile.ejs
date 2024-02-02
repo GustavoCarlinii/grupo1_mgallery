@@ -1,0 +1,22 @@
+<%- include("partials/head", {styles: ['ingreso','style-carrito', 'styleProfile']}) %>
+<body>
+    <%- include("partials/header") %>
+    <main>
+        <h1>Hola <%= user.first_name %></h1>
+        <div class="contenedorTodo">
+            <img src="/images/user/<%- user.img %>">
+            <div class="datos">    
+                <h3>Nombre: <%= user.first_name %></h3>
+                <h3>Apellido: <%= user.last_name %></h3>
+                <h3>Código postal: <%= user.postal_code %></h3>
+                <h3>Dirección: <%= user.adress %></h3>
+                <h3>Teléfono: <%= user.phone %></h3>
+            </div>
+        </div>
+        <div class="boton-carrito">
+            <button class="button-ingreso"><a href="edit/<%=user.id %>">Editar usuario</a></button>
+        </div>
+    </main>
+    <%- include("partials/footer") %>
+</body>
+</html>

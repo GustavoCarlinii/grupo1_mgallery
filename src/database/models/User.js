@@ -50,6 +50,10 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.TEXT,
       allowNull:true,
     },
+    img:{
+      type:DataTypes.TEXT,
+      allowNull:true,
+    },
     roles_id: {
       type:DataTypes.INTEGER,
       references:{

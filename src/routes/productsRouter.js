@@ -21,7 +21,7 @@ router.get('/register', productsController.formNuevoProd);
 router.post('/create', upload.single('img'), productsController.store);
 router.get('/edit/:id', productsController.edit);
 router.put('/update/:id', upload.single('img'), productsController.update);
-router.delete('/delete/:id', productsController.destroy);
+router.get('/delete/:id', productsController.destroy);
 
 router.get('/', productsController.index);
 router.get('/:id', productsController.detalleProducto);
