@@ -5,12 +5,15 @@ const { log } = require('console');
 
 const userController = {
     formIngreso(req, res){
+        //console.log(req.cookies.recordar);
         res.render('formIngreso')
     },
     formRegistro(req, res){
+        //res.cookie('recordar', 'usuario', {maxAge: 1000 * 30});
         return res.render('formRegistro')
     },
     profile (req, res){
+        console.log(req.cookies.emailUsuario);
         res.render('profile', {
             user: req.session.userLogged
         });
@@ -22,6 +25,9 @@ const userController = {
                 if (verifPassword) {
                     delete userLogin.password;
                     req.session.userLogged = userLogin;
+                    if (req.body.recordarUsuario) {
+                        res.cookie('emailUsuario', req.body.email, {maxAge: (1000 * 60) * 2})
+                    }
                     return res.redirect('/user/profile')
                 }
             }
@@ -35,6 +41,7 @@ const userController = {
         
     },
     logout (req, res){
+        res.clearCookie('emailUsuario')
         req.session.destroy();
         return res.redirect('/');
     },
