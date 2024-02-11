@@ -42,8 +42,7 @@ const productsController = {
     },
     async update(req, res) {
         try {
-            console.log(req.body)
-            await db.ArtWorks.update({ ...req.body }, { where: { id: req.params.id } });
+            await db.ArtWorks.update({ ...req.body, img: req.file?.filename || db.ArtWorks.img},{ where: { id: req.params.id } });
             return res.redirect('/products');
         } catch (error) {
             return res.status(500).send(error);

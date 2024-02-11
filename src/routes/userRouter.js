@@ -28,6 +28,6 @@ router.get('/logout', userController.logout);
 router.get('/profile', authMiddleware, userController.profile);
 router.post('/create',upload.single('img') , userRegisterValidator, userController.store);
 router.get('/edit/:id', userController.edit);
-router.put('/update/:id', userController.update);
+router.put('/update/:id', upload.single('img'), userController.update);
 
 module.exports=router;

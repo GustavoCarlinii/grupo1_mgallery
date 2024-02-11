@@ -2,7 +2,7 @@
 <body>
     <%- include("partials/header") %>
     <main class="main-carrito">
-        <form action="/user/update/<%= User.id %>?_method=PUT" method="post">
+        <form action="/user/update/<%= User.id %>?_method=PUT" method="post" enctype="multipart/form-data">
             <h1>Modifica tus datos <%= User.first_name %></h1>
             <div class="container">
                 <div class="form-container">
@@ -28,6 +28,10 @@
                 <div class="form-container">
                     <label for="phone">Telefono</label>
                     <input type="text" name="phone" value="<%= User.phone %>" id="phone">
+                </div>
+                <div class="form-container">
+                    <label for="img">Foto de perfil</label>
+                    <input type="file" name="img" value="<%= User.img %>" id="img">
                 </div>
             </div>
             <div class="boton-carrito">

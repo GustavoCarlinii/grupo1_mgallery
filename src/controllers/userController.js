@@ -5,11 +5,9 @@ const { log } = require('console');
 
 const userController = {
     formIngreso(req, res){
-        //console.log(req.cookies.recordar);
         res.render('formIngreso')
     },
     formRegistro(req, res){
-        //res.cookie('recordar', 'usuario', {maxAge: 1000 * 30});
         return res.render('formRegistro')
     },
     profile (req, res){
@@ -97,7 +95,7 @@ const userController = {
     },
     async update(req, res) {
         try {
-            await db.User.update({ ...req.body }, { where: { id: req.params.id } });
+            await db.User.update({ ...req.body, img: req.file?.filename || db.User.img }, { where: { id: req.params.id } });
             return res.redirect('/user/profile');
         } catch (error) {
             return res.status(500).send(error);
