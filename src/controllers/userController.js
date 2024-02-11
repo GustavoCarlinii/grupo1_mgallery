@@ -10,11 +10,19 @@ const userController = {
     formRegistro(req, res){
         return res.render('formRegistro')
     },
-    profile (req, res){
+    /*profile (req, res){
         console.log(req.cookies.emailUsuario);
         res.render('profile', {
             user: req.session.userLogged
         });
+    },*/
+    async profile(req, res) {
+        try {
+            const user = await db.User.findByPk(req.session.userLogged.id);
+            res.render('profile', { user });
+        } catch (error) {
+            res.status(500).send(error);
+        }
     },
     async loginProcess (req, res){
         let userLogin = await db.User.findOne({ where: { email: req.body.email } });
@@ -23,6 +31,7 @@ const userController = {
                 if (verifPassword) {
                     delete userLogin.password;
                     req.session.userLogged = userLogin;
+                    res.locals.userLogged = true;
                     if (req.body.recordarUsuario) {
                         res.cookie('emailUsuario', req.body.email, {maxAge: (1000 * 60) * 2})
                     }
