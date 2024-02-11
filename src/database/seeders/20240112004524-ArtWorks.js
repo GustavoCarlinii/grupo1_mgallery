@@ -8,6 +8,7 @@ module.exports = {
       name: "El dolor",
       prices: "$1200",
       user_id: users[0].id,
+      img: "./images/gato-mirando.jpg"
       },
       {
         name: "Un dia mas ",
