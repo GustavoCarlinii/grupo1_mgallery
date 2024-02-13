@@ -23,16 +23,28 @@ app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(userLoggedMiddleware);
 
+
+
 const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/productsRouter');
 const userRoutes = require('./routes/userRouter')
+const productsAPIRoutes = require('./routes/api/products');
+const usersAPIRoutes = require('./routes/api/users');
+
+
+
 
 app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/products', productsRoutes);
+app.use('/api', productsAPIRoutes);
+app.use('/api', usersAPIRoutes);
 app.use((req, res, next) => {
     res.status(404).render('404');
 });
+
+
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () =>{
