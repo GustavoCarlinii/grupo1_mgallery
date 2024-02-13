@@ -8,14 +8,29 @@
                 <div class="form-container">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="first_name" value="<%= User.first_name %>" id="nombre">
+                    <% if (locals.errors && errors.first_name) { %>
+                        <div class="text-danger">
+                            <%= errors.first_name.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="apellido">Apellido</label>
                     <input type="text" name="last_name" value="<%= User.last_name %>" id="apellido">
+                    <% if (locals.errors && errors.last_name) { %>
+                        <div class="text-danger">
+                            <%= errors.last_name.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="email">Correo electronico</label>
                     <input type="email" name="email" value="<%= User.email %>" id="email">
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="postal_code">Código Postal</label>
