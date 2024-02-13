@@ -18,17 +18,17 @@
                 </div>
                 <div class="form-container">
                     <label for="last_name">Apellido</label>
-                    <input type="text" name="last_name" id="apellido" value=" <%= locals.oldData ? oldData.last_name : null%>">
+                    <input type="text" name="last_name" id="apellido" value="<%= locals.oldData ? oldData.last_name : null%>">
                     <div class="error-message" id="error-name"></div>
                     <% if (locals.errors && errors.last_name) { %>
                         <div class="text-danger">
                             <%= errors.last_name.msg %>
                         </div>
-                        <% } %>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="email">Correo electronico</label>
-                <input type="email" name="email" id="email" value=" <%= locals.oldData ? oldData.email : null%>">
+                <input type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null%>">
                 <div class="error-message" id="error-name"></div>
                     <% if (locals.errors && errors.email) { %>
                         <div class="text-danger">

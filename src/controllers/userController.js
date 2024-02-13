@@ -10,12 +10,6 @@ const userController = {
     formRegistro(req, res){
         return res.render('formRegistro')
     },
-    /*profile (req, res){
-        console.log(req.cookies.emailUsuario);
-        res.render('profile', {
-            user: req.session.userLogged
-        });
-    },*/
     async profile(req, res) {
         try {
             const user = await db.User.findByPk(req.session.userLogged.id);
@@ -44,8 +38,7 @@ const userController = {
                     msg: 'Datos ingresados inválidos'
                 }
             }
-        });
-        
+        });     
     },
     logout (req, res){
         res.clearCookie('emailUsuario')
@@ -103,13 +96,38 @@ const userController = {
         }
     },
     async update(req, res) {
+        
         try {
+
+            const resultadoValidacion = validationResult(req);
+            console.log(resultadoValidacion);
+            if (resultadoValidacion.errors.length > 0){
+                return res.render('formRegistroEdit', {
+                    errors: resultadoValidacion.mapped(),
+                    oldData: req.body
+                })
+            }
+
             await db.User.update({ ...req.body, img: req.file?.filename || db.User.img }, { where: { id: req.params.id } });
             return res.redirect('/user/profile');
         } catch (error) {
             return res.status(500).send(error);
         }
-    },
-}
 
+        /*try {
+
+            const resultadoValidacion = validationResult(req);
+            if (resultadoValidacion.errors.length > 0){
+                return res.render('formRegistroEdit', {
+                    errors: resultadoValidacion.mapped(),
+                    oldData: req.body
+                })
+            }
+
+            await db.User.update({ ...req.body, img: req.file?.filename || db.User.img},{ where: { id: req.params.id } });
+            return res.redirect('/user/profile');
+        } catch (error) {
+            return res.status(500).send(error);
+        }*/
+    }}
 module.exports = userController;

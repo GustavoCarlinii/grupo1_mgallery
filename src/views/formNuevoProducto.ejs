@@ -7,15 +7,30 @@
             <div class="container">
                 <div class="form-container">
                     <label for="name">Nombre de la obra</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" value="<%= locals.oldData ? oldData.name : null  %>">
+                    <% if (locals.errors && errors.name){ %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="prices">Precio $</label>
-                    <input type="text" name="prices" id="prices">
+                    <input type="text" name="prices" id="prices" value="<%= locals.oldData ? oldData.prices : null  %>">
+                    <% if (locals.errors && errors.prices){ %>
+                        <div class="text-danger">
+                            <%= errors.prices.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="description">Descripcion</label>
-                    <input type="text" name="description" id="description">
+                    <input type="text" name="description" id="description" value="<%= locals.oldData ? oldData.description : null  %>">
+                    <% if (locals.errors && errors.description){ %>
+                        <div class="text-danger">
+                            <%= errors.description.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="img">Imagen del producto</label>

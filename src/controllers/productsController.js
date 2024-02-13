@@ -1,10 +1,11 @@
 const db = require('../database/models');
+const { validationResult } = require('express-validator');
 
 const productsController = {
     async index (req, res){
         let products = await db.ArtWorks.findAll();
         res.render('productos', {ArtWorks: products});
-        },
+    },
     formNuevoProd(req, res){
         res.render('formNuevoProducto')
     },
@@ -21,6 +22,14 @@ const productsController = {
     },
     async store(req, res){
         try {
+            const resultadoValidacion = validationResult(req);
+            if (resultadoValidacion.errors.length > 0){
+                return res.render('formNuevoProducto', {
+                    errors: resultadoValidacion.mapped(),
+                    oldData: req.body
+                })
+            }
+
             const artworkNew = {
                 ...req.body,
                 img: req.file?.filename || 'default.png',
@@ -35,13 +44,22 @@ const productsController = {
     async edit(req, res){
         try {
             const artworkEdit = await db.ArtWorks.findByPk(req.params.id);
-            return res.render('formProductoEdit', { ArtWorks: artworkEdit });
+            return res.render('formProductoEdit', { productEdit: artworkEdit, id: artworkEdit.id });
         } catch (error) {
             return res.status(500).send(error);
         }
     },
     async update(req, res) {
         try {
+            const artworkId = req.body.id
+            const resultadoValidacion = validationResult(req);
+            if (resultadoValidacion.errors.length > 0){
+                return res.render('formProductoEdit', {
+                    errors: resultadoValidacion.mapped(),
+                    productEdit: {...req.body, id: artworkId }
+                })
+            }
+
             await db.ArtWorks.update({ ...req.body, img: req.file?.filename || db.ArtWorks.img},{ where: { id: req.params.id } });
             return res.redirect('/products');
         } catch (error) {

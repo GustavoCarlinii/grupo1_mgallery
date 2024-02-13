@@ -2,24 +2,40 @@
 <body>
     <%- include("partials/header") %>
     <main class="main-carrito">
-        <form action="/products/update/<%= ArtWorks.id %>?_method=PUT" method="post" enctype="multipart/form-data">
-            <h1>Modifica los datos del producto "<%= ArtWorks.name %>"</h1>
+        <form action="/products/update/<%= productEdit.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<%= productEdit.id %>">
+            <h1>Modifica los datos del producto </h1>
             <div class="container">
                 <div class="form-container">
                     <label for="name">Nombre de la obra</label>
-                    <input type="text" name="name" value="<%= ArtWorks.name %>" id="name">
+                    <input type="text" name="name" id="name" value="<%= locals.productEdit ? productEdit.name : null %>">
+                    <% if (locals.errors && errors.name){ %> 
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="prices">Precio $</label>
-                    <input type="text" name="prices" value="<%= ArtWorks.prices %>" id="prices">
+                    <input type="text" name="prices"  id="prices" value="<%= locals.productEdit ? productEdit.prices : null %>">
+                    <% if (locals.errors && errors.prices){ %>
+                        <div class="text-danger">
+                            <%= errors.prices.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="description">Descripcion</label>
-                    <input type="text" name="description" value="<%= ArtWorks.description %>" id="description">
+                    <input type="text" name="description" id="description" value="<%= locals.productEdit ? productEdit.description : null %>">
+                    <% if (locals.errors && errors.description){ %>
+                        <div class="text-danger">
+                            <%= errors.description.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form-container">
                     <label for="img">Imagen del producto</label>
-                    <input type="file" name="img" value="<%= ArtWorks.img %>" id="img">
+                    <input type="file" name="img" value="<%= productEdit.img %>" id="img">
                 </div>
                 <div class="boton-carrito">
                     <button class="button-ingreso" type="submit" value="Registrar">Guardar cambios</button>
